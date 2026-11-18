@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MDRRMO Operations · Santa Cruz</title><link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="/static/vendor/leaflet.css"><link rel="stylesheet" href="/static/ops.css"></head>
+<body><div class="ops">
+<div class="topbar">
+  <div class="title">MDRRMO Operations · Santa Cruz, Laguna<small>Flood risk, incidents &amp; rescue routing</small></div>
+  <div class="scenario-chip" id="scenario-chip"><span class="badge" id="sc-status">…</span><span id="sc-text">Loading scenario…</span><button class="ghost small" id="sc-change">Change rain scenario</button></div>
+  <span class="spacer"></span>
+  <a href="/report" target="_blank" rel="noopener">Public report page ↗</a><a href="/">Home</a>
+</div>
+<div class="layout">
+  <aside class="panel">
+    <nav class="tabs" role="tablist">
+      <button data-tab="overview" class="active">Overview</button>
+      <button data-tab="residents">Residents</button>
+      <button data-tab="incidents">Incidents <span class="count hidden" id="inc-count"></span></button>
+      <button data-tab="facilities">Facilities</button>
+      <button data-tab="routing">Routing</button>
+    </nav>
+
+    <section class="tab-body" id="tab-overview">
+      <div id="guidance" class="notice"></div>
+      <div class="kpis" id="kpis"></div>
+      <h3>Highest evacuation priority</h3>
+      <div class="list" id="top-residents"></div>
+      <h3>By barangay</h3>
+      <table><thead><tr><th>Barangay</th><th class="num">Households</th><th class="num">High</th><th class="num">Medium</th><th class="num">Evacuated (people)</th><th class="num">Open reports</th></tr></thead><tbody id="brgy-table"></tbody></table>
+    </section>
+
+    <section class="tab-body hidden" id="tab-residents">
+      <div class="row"><input id="res-q" placeholder="Search name, RES-code, address, number" style="flex:1;width:auto">
+        <select id="res-risk" style="width:110px"><option value="">All risks</option><option>High</option><option>Medium</option><option>Low</option></select></div>
+      <div class="row" style="margin:8px 0"><select id="res-brgy" style="flex:1;width:auto"><option value="">All barangays</option></select>
+        <button class="small" id="res-add">+ Register</button><button class="ghost small" id="res-export">Export priority list</button></div>
+      <div id="res-detail"></div>
+      <form id="res-form" class="detail hidden" novalidate>
+        <h4 id="res-form-title">Register household</h4>
+        <label>Household head (full name)<input name="full_name" required maxlength="120"></label>
+        <div class="grid2"><label>Contact number<input name="contact_number" maxlength="40"></label><label>Age of head<input name="age" type="number" min="18" max="100" required></label></div>
+        <label>Address / landmark<input name="address_text" maxlength="200"></label>
+        <div class="row"><button type="button" class="ghost small" id="res-pick">📍 Pick location on map</button><span class="small-text muted" id="res-loc">No location</span></div>
+        <div class="grid3" style="margin-top:8px"><label>Members<input name="house_members" type="number" min="1" max="30" required></label><label>Children &lt;18<input name="children_count" type="number" min="0" max="30" value="0"></label><label>Elders 60+<input name="elder_count" type="number" min="0" max="30" value="0"></label></div>
+        <div class="grid2"><label>PWD<input name="pwd_count" type="number" min="0" max="30" value="0"></label><label>Housing<select name="housing_material" required><option value="Concrete">Concrete</option><option value="SemiConcrete">Semi-concrete</option><option value="LightMaterials">Light materials</option></select></label></div>
+        <label>Special needs (bedridden, oxygen, pregnant…)<input name="special_needs" maxlength="300"></label>
+        <label>Notes<input name="notes" maxlength="500"></label>
+        <p class="error" id="res-err"></p>
+        <div class="row"><button type="submit">Save &amp; predict</button><button type="button" class="ghost" id="res-cancel">Cancel</button></div>
+      </form>
+      <div class="small-text muted" id="res-count" style="margin:6px 0"></div>
+      <div class="list" id="res-list"></div>
+    </section>
+
+    <section class="tab-body hidden" id="tab-incidents">
+      <div class="row" style="margin-bottom:8px"><select id="inc-filter" style="flex:1;width:auto"><option value="open">Open reports</option><option value="all">All reports</option><option value="new">New (unverified)</option><option value="dispatched">Dispatched</option><option value="resolved">Resolved</option></select><button class="small" id="inc-add">+ Log incident</button></div>
+      <div id="inc-detail"></div>
+      <form id="inc-form" class="detail hidden" novalidate>
+        <h4>Log incident (staff)</h4>
+        <label>Type<select name="type" id="inc-type"></select></label>
+        <div class="row"><button type="button" class="ghost small" id="inc-pick">📍 Pick location on map</button><span class="small-text muted" id="inc-loc">No location</span></div>
+        <div class="grid2" style="margin-top:8px"><label>Water depth<select name="water_depth" id="inc-depth"><option value="">Not stated</option></select></label><label>People affected<input name="people_affected" type="number" min="0" max="10000"></label></div>
+        <label>Description<textarea name="description" maxlength="1000"></textarea></label>
+        <p class="error" id="inc-err"></p>
+        <div class="row"><button type="submit">Save</button><button type="button" class="ghost" id="inc-cancel">Cancel</button></div>
+      </form>
+      <p class="small-text muted">Public reports change rescue routing only after a staff member verifies them. Staff-logged reports apply at once.</p>
+      <div class="list" id="inc-list"></div>
+    </section>
+
+    <section class="tab-body hidden" id="tab-facilities">
+      <div class="row" style="margin-bottom:8px"><select id="fac-filter" style="flex:1;width:auto"><option value="evacuation_center">Evacuation centres</option><option value="rescue_base">Rescue bases</option><option value="hospital">Hospitals</option></select><button class="small" id="fac-add">+ Add</button></div>
+      <form id="fac-form" class="detail hidden" novalidate>
+        <h4>Add facility</h4>
+        <label>Name<input name="name" required maxlength="160"></label>
+        <div class="grid2"><label>Type<select name="type"><option value="evacuation_center">Evacuation centre</option><option value="rescue_base">Rescue base</option><option value="hospital">Hospital</option></select></label><label>Capacity (people)<input name="capacity" type="number" min="0"></label></div>
+        <div class="row"><button type="button" class="ghost small" id="fac-pick">📍 Pick location on map</button><span class="small-text muted" id="fac-loc">No location</span></div>
+        <p class="error" id="fac-err"></p>
+        <div class="row"><button type="submit">Save</button><button type="button" class="ghost" id="fac-cancel">Cancel</button></div>
+      </form>
+      <p class="small-text muted">Facilities were seeded from OpenStreetMap as candidates. Confirm each against the MDRRMO's designated list, set capacities, and deactivate unsuitable ones. Centres inside a NOAH Medium/High zone for the active scenario are never chosen for evacuation.</p>
+      <div class="list" id="fac-list"></div>
+    </section>
+
+    <section class="tab-body hidden" id="tab-routing">
+      <label>Team starts from<select id="rt-origin"><option value="nearest_base">Nearest rescue base (automatic)</option><option value="point">Point on map…</option></select></label>
+      <div class="row hidden" id="rt-origin-pick"><button type="button" class="ghost small" id="rt-pick-o">📍 Pick start</button><span class="small-text muted" id="rt-o-text"></span></div>
+      <label style="margin-top:8px">Destination</label>
+      <div class="row"><button type="button" class="ghost small" id="rt-pick-d">📍 Pick on map</button><span class="small-text" id="rt-d-text">Choose a resident or incident, or pick a point</span></div>
+      <label style="margin-top:8px">Vehicle<select id="rt-vehicle"></select></label>
+      <p class="small-text muted" id="rt-vnote"></p>
+      <div class="row"><button id="rt-go">Find safest route</button><button class="ghost" id="rt-evac">Route to evacuation centre</button><button class="ghost small" id="rt-clear">Clear</button></div>
+      <p class="error" id="rt-err"></p>
+      <div id="rt-result"></div>
+    </section>
+  </aside>
+
+  <div class="map-wrap"><div id="map"></div>
+    <div class="map-tools">
+      <b>Layers</b>
+      <label><input type="checkbox" id="ly-hazard" checked> Flood depth (NOAH, scenario)</label>
+      <label><input type="checkbox" id="ly-res" checked> Residents</label>
+      <label><input type="checkbox" id="ly-inc" checked> Incidents</label>
+      <label><input type="checkbox" id="ly-fac" checked> Facilities</label>
+      <div class="legend">
+        <span><i style="background:#9ecae1"></i>Flood Low &lt; 0.5 m</span><span><i style="background:#3182bd"></i>Flood Medium 0.5–1.5 m</span><span><i style="background:#08306b"></i>Flood High &gt; 1.5 m</span>
+        <span><i style="background:#1a9e5f"></i>Route: dry</span><span><i style="background:#f1c40f"></i>Route: shallow water</span><span><i style="background:#e67e22"></i>Route: Medium water</span><span><i style="background:#c0392b"></i>Route: impassable / boat</span><span><i style="background:#888"></i>Shortest (for comparison)</span>
+      </div>
+    </div>
+    <div class="pick-banner hidden" id="pick-banner"></div>
+  </div>
+</div></div>
+
+<dialog id="sc-dialog"><form method="dialog" class="dlg" id="sc-form">
+  <h2>Active rain scenario</h2>
+  <p class="small-text muted">Every registered household is re-predicted with the risk model under this rain, and routing uses the matching NOAH flood map.</p>
+  <div class="row" style="margin-bottom:10px"><button type="button" class="ghost small" id="sc-forecast">Load Open-Meteo forecast</button><select id="sc-events" style="flex:1;width:auto"><option value="">…or a past rain event</option></select></div>
+  <div class="grid3"><label>24-hour rain (mm)<input id="sc-24" type="number" min="0" step="0.1" required></label><label>3-day total (mm)<input id="sc-3" type="number" min="0" step="0.1" required></label><label>7-day total (mm)<input id="sc-7" type="number" min="0" step="0.1" required></label></div>
+  <label>Label<input id="sc-label" maxlength="200" placeholder="e.g. PAGASA Orange warning, 10 AM"></label>
+  <div class="small-text muted" id="sc-note"></div>
+  <p class="error" id="sc-err"></p>
+  <div class="row"><button type="button" id="sc-apply">Apply &amp; re-predict</button><button type="button" class="ghost" id="sc-cancel">Cancel</button></div>
+</form></dialog>
+
+<dialog id="pin-dialog"><form class="dlg" id="pin-form">
+  <h2>Operations PIN</h2><p class="small-text muted">This console holds residents' personal data.</p>
+  <label>PIN<input id="pin" type="password" autocomplete="current-password" required></label>
+  <p class="error" id="pin-err"></p><button type="submit">Unlock</button>
+</form></dialog>
+
+<script src="/static/vendor/leaflet.js"></script><script src="/static/ops.js"></script></body></html>

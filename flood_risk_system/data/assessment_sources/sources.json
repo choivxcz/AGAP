@@ -1,0 +1,7 @@
+{
+  "barangays": "https://services7.arcgis.com/poQdgvLD6DHnbpsT/ArcGIS/rest/services/Philippine_Administrative_Boundaries/FeatureServer/3/query",
+  "elevation": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N14_00_E121_00_DEM/Copernicus_DSM_COG_10_N14_00_E121_00_DEM.tif",
+  "land_cover": "https://esa-worldcover.s3.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_N12E120_Map.tif",
+  "historical_water": "https://s3.waw4-1.cloudferro.com/swift/v1/global-surface-water/download2024/Aggregated/VER1-5/occurrence/occurrence_120E_10N_v1_5_2024.tif",
+  "rivers": "https://api.openstreetmap.org/api/0.6/map"
+}

@@ -1,0 +1,69 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Synthetic ML v2 evaluation</title><style>body{font:16px system-ui;background:#f1f5f4;color:#183c40;margin:0}main{max-width:1100px;margin:auto;padding:28px}section{background:white;border:1px solid #d5e1dc;padding:24px;border-radius:14px;margin:20px 0}.notice{border-left:5px solid #b27b24}.cards{display:flex;gap:28px;flex-wrap:wrap}strong{font-size:28px;display:block}table{width:100%;border-collapse:collapse;font-size:14px}td,th{padding:10px;text-align:left;border-bottom:1px solid #ddd}img{width:100%}p,li{line-height:1.7}.scroll{overflow-x:auto}</style><main><p>SANTA CRUZ · SYNTHETIC ML v2</p><h1>Independent experiment report</h1><section class="notice"><h2>98% accuracy target: NOT MET</h2><p>Measured test accuracy: 84.08%. No confusion-matrix pass threshold was supplied; per-class results are disclosed below. These targets are simulated, not actual flood outcomes. The dataset is not official LGU/PSA household data, and this is not an operational safety model.</p></section><section class="cards"><div><strong>84.08%</strong>Test accuracy</div><div><strong>0.712</strong>Macro F1</div><div><strong>67.28%</strong>Balanced accuracy</div><div><strong>66.58%</strong>Majority baseline</div><div><strong>36.31%</strong>High-class recall</div></section><section><h2>Test confusion matrices</h2><img src="confusion_matrix.png" alt="Raw and row-normalized confusion matrices"><div class="scroll"><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>precision</th>
+      <th>recall</th>
+      <th>f1-score</th>
+      <th>support</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Low</th>
+      <td>0.796</td>
+      <td>0.750</td>
+      <td>0.772</td>
+      <td>4384</td>
+    </tr>
+    <tr>
+      <th>Medium</th>
+      <td>0.862</td>
+      <td>0.906</td>
+      <td>0.883</td>
+      <td>9694</td>
+    </tr>
+    <tr>
+      <th>High</th>
+      <td>0.709</td>
+      <td>0.363</td>
+      <td>0.480</td>
+      <td>482</td>
+    </tr>
+  </tbody>
+</table></div></section><section><h2>Validation-only selection</h2><p>Selected reference_hgb_160 by macro F1, then balanced accuracy. No test-set tuning or repeated test-based search. Reference_hgb_160 is the previous model configuration retrained on the new training subset; old 81.6% results are not directly comparable because the dataset changed.</p><div class="scroll"><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Candidate</th>
+      <th>Validation accuracy</th>
+      <th>Validation macro F1</th>
+      <th>Validation balanced accuracy</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>reference_hgb_160</td>
+      <td>0.7958</td>
+      <td>0.6720</td>
+      <td>0.6455</td>
+    </tr>
+    <tr>
+      <td>hgb_400</td>
+      <td>0.7916</td>
+      <td>0.6578</td>
+      <td>0.6272</td>
+    </tr>
+    <tr>
+      <td>balanced_hgb_400</td>
+      <td>0.7894</td>
+      <td>0.6612</td>
+      <td>0.6559</td>
+    </tr>
+    <tr>
+      <td>extra_trees_200</td>
+      <td>0.7949</td>
+      <td>0.6090</td>
+      <td>0.5993</td>
+    </tr>
+  </tbody>
+</table></div><p>Final model refit on 149,760 Train + Validation rows and evaluated once on 14,560 Test rows. Initial split: 137,280 Train; 12,480 Validation; 14,560 Test. Household IDs and rainfall dates are disjoint. The 140 selected dates exclude every v1 event date.</p></section><section><h2>Dataset changes and limits</h2><p>364,000 hypothetical household/date scenarios. One complete rainfall date sampled uniformly per calendar quarter, not annual maxima. Age band selection is proportional to each synthetic household's member counts, then uniform within child/adult/elder bands. Original GIS values and synthetic composition/materials are preserved. These consistency changes do not establish demographic or physical realism.</p><p>The target simulator remains the illustrative v1 scoring rules; no labels were rewritten to make classification easier. Missing-source contributions remain hidden uniform integer draws per household/factor. The model cannot reliably infer independent latent contributions. Missing environment values remain missing; training-only medians handle them in the pipeline. Accuracy may therefore be limited even for this synthetic task.</p><p>Coverage is equal by barangay, not population weighted. Hypothetical locations are not verified residences. Historical rainfall is one shared NASA grid estimate; static land cover does not reconstruct earlier conditions. Household/date repetitions induce dependence, so no independent-row confidence intervals are claimed. Source manifests and quality_report.json are provided.</p><h2>What is still needed for real validation</h2><p>Observed household/event outcomes, consistent Low/Medium/High definitions, a representative sampling frame and independent external evaluation. A 98% synthetic score would not solve these requirements.</p><p>Method reference: <a href="https://scikit-learn.org/stable/common_pitfalls.html">scikit-learn data leakage guidance</a>; <a href="https://scikit-learn.org/stable/modules/model_evaluation.html">classification evaluation documentation</a>.</p></section></main></html>

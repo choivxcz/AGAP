@@ -1,0 +1,5 @@
+"Step","Rows","Households"
+"Raw file",241200,8000
+"After removing duplicate rows",240000,8000
+"After removing incomplete households",232110,7737
+"After correcting labels",232110,7737

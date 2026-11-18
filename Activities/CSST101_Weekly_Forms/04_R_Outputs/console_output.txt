@@ -1,0 +1,350 @@
+R version 4.4.1 (2024-06-14) 
+Data folder: data 
+Clean dataset: 232110 rows x 28 columns
+RiskLevel
+   Low Medium   High 
+156037  56564  19509 
+
+Raw dataset: 241200 rows x 28 columns
+'data.frame':	241200 obs. of  28 variables:
+ $ HouseholdID                 : chr  "AGAP-SCL-00001" "AGAP-SCL-00001" "AGAP-SCL-00001" "AGAP-SCL-00001" ...
+ $ Barangay                    : chr  "Gatid" "Gatid" "Gatid" "Gatid" ...
+ $ Latitude                    : num  14.3 14.3 14.3 14.3 14.3 ...
+ $ Longitude                   : num  121 121 121 121 121 ...
+ $ EventDate                   : chr  "1993-12-27" "1994-10-21" "1995-02-02" "1996-02-13" ...
+ $ Age                         : int  76 76 76 76 76 76 76 76 76 76 ...
+ $ HousingMaterial             : chr  "Concrete" "Concrete" "Concrete" "Concrete" ...
+ $ HouseMembers                : int  6 6 6 6 6 6 6 6 6 6 ...
+ $ ChildrenCount               : int  2 2 2 2 2 2 2 2 2 2 ...
+ $ ElderCount                  : int  3 3 3 3 3 3 3 3 3 3 ...
+ $ PWDCount                    : int  0 0 0 0 0 0 0 0 0 0 ...
+ $ ElevationMeters             : num  4.33 4.33 4.33 4.33 4.33 4.33 4.33 4.33 4.33 4.33 ...
+ $ SlopeDegrees                : num  1.47 1.47 1.47 1.47 1.47 1.47 1.47 1.47 1.47 1.47 ...
+ $ DistanceToWaterwayM         : num  1260 1260 1260 1260 1260 1260 1260 1260 1260 1260 ...
+ $ LocationType                : chr  "Inland" "Inland" "Inland" "Inland" ...
+ $ LandCoverType               : chr  "TreeCover" "TreeCover" "TreeCover" "TreeCover" ...
+ $ HistoricalWaterOccurrencePct: num  0 0 0 0 0 0 0 0 0 0 ...
+ $ FloodHazard5yr              : chr  "Low" "Low" "Low" "Low" ...
+ $ FloodHazard25yr             : chr  "Low" "Low" "Low" "Low" ...
+ $ FloodHazard100yr            : chr  "Low" "Low" "Low" "Low" ...
+ $ HouseFloodHazard5yr         : chr  "None" "None" "None" "None" ...
+ $ HouseFloodHazard25yr        : chr  "None" "None" "None" "None" ...
+ $ HouseFloodHazard100yr       : chr  "None" "None" "None" "None" ...
+ $ MGBFloodSusceptibility      : chr  "Moderate" "Moderate" "Moderate" "Moderate" ...
+ $ Rainfall24hMm               : num  78.14 56.02 26.08 0.36 34.95 ...
+ $ Rainfall3DayMm              : num  93.06 83.89 49.67 1.14 58.39 ...
+ $ Rainfall7DayMm              : num  145.2 109.1 68.6 29.7 72.2 ...
+ $ RiskLevel                   : chr  "Medium" "Low" "Low" "Low" ...
+types
+character   integer   numeric 
+       14         5         9 
+   Column                       Role               Type     Unit   Origin                            
+1  HouseholdID                  ID                 text     <NA>   Generated (AGAP v1.0)             
+2  Barangay                     ID                 text     <NA>   Barangay boundary                 
+3  Latitude                     Location (map pin) float    deg    Real building                     
+4  Longitude                    Location (map pin) float    deg    Real building                     
+5  EventDate                    ID                 date     <NA>   NASA POWER                        
+6  Age                          Feature            int      years  Simulated                         
+7  HousingMaterial              Feature            category <NA>   Simulated                         
+8  HouseMembers                 Feature            int      people Simulated                         
+9  ChildrenCount                Feature            int      people Simulated                         
+10 ElderCount                   Feature            int      people Simulated                         
+11 PWDCount                     Feature            int      people Simulated                         
+12 ElevationMeters              Feature            float    m      Copernicus DEM 30 m               
+13 SlopeDegrees                 Feature            float    deg    Derived from DEM                  
+14 DistanceToWaterwayM          Feature            float    m      OSM waterways                     
+15 LocationType                 Feature            category <NA>   Derived                           
+16 LandCoverType                Feature            category <NA>   ESA WorldCover 2021               
+17 HistoricalWaterOccurrencePct Feature            float    %      JRC Global Surface Water 1984-2024
+18 FloodHazard5yr               Feature            category <NA>   Project NOAH (ODbL)               
+19 FloodHazard25yr              Feature            category <NA>   Project NOAH (ODbL)               
+20 FloodHazard100yr             Feature            category <NA>   Project NOAH (ODbL)               
+21 HouseFloodHazard5yr          Feature            category <NA>   Project NOAH (ODbL)               
+22 HouseFloodHazard25yr         Feature            category <NA>   Project NOAH (ODbL)               
+23 HouseFloodHazard100yr        Feature            category <NA>   Project NOAH (ODbL)               
+24 MGBFloodSusceptibility       Feature            category <NA>   MGB Detailed Flood Susceptibility 
+25 Rainfall24hMm                Feature            float    mm     NASA POWER                        
+26 Rainfall3DayMm               Feature            float    mm     NASA POWER                        
+27 Rainfall7DayMm               Feature            float    mm     NASA POWER                        
+28 RiskLevel                    Target             category <NA>   Rule-based (simulated)            
+           Column Missing Percent
+1             Age    3619     1.5
+2 HousingMaterial    2410     1.0
+3    SlopeDegrees    1937     0.8
+Exact duplicate rows: 1200 
+Repeated household-event pairs: 1200 
+Households: 8000  Barangays: 26  Rain events: 60 
+
+HousingMaterial:
+
+      Concrete LightMaterials   SemiConcrete           <NA> 
+         96992          47492          94306           2410 
+
+LocationType:
+
+      Inland NearWaterway    Riverside 
+      102248        91494        47458 
+
+LandCoverType:
+
+BareSparseVegetation              BuiltUp             Cropland            Grassland            TreeCover 
+                 541               111602                 5489                 5177               118391 
+
+FloodHazard5yr:
+
+  High    Low Medium   None 
+   964 215632  18847   5757 
+
+FloodHazard25yr:
+
+  High    Low Medium 
+   964 168473  71763 
+
+FloodHazard100yr:
+
+  High    Low Medium 
+  6883  85042 149275 
+
+HouseFloodHazard5yr:
+
+  High    Low Medium   None 
+  1956  42003  16353 180888 
+
+HouseFloodHazard25yr:
+
+  High    Low Medium   None 
+  5029  54062  33538 148571 
+
+HouseFloodHazard100yr:
+
+  High    Low Medium   None 
+  6203  60212  47830 126955 
+
+MGBFloodSusceptibility:
+
+     High  Moderate NotMapped 
+    30596     79146    131458 
+
+RiskLevel:
+
+  High    Low Medium 
+ 20414 161427  59359 
+                                  Step   Rows Households
+1                             Raw file 241200       8000
+2        After removing duplicate rows 240000       8000
+3 After removing incomplete households 232110       7737
+4              After correcting labels 232110       7737
+Incomplete households removed: 263   Labels corrected: 1181 
+Labels identical to the published clean file: 232109 of 232110 
+Household table: 7737 households
+
+Households (n = 7,737):
+                                n   Mean     SD   Min     Q1 Median     Q3     Max
+Age                          7737  55.46  16.59 18.00  43.00  56.00  69.00   90.00
+HouseMembers                 7737   4.34   2.24  1.00   3.00   4.00   6.00   12.00
+ChildrenCount                7737   0.99   1.06  0.00   0.00   1.00   2.00    7.00
+ElderCount                   7737   0.40   0.63  0.00   0.00   0.00   1.00    4.00
+PWDCount                     7737   0.12   0.35  0.00   0.00   0.00   0.00    3.00
+Dependents                   7737   1.52   1.36  0.00   0.00   1.00   2.00    9.00
+ElevationMeters              7737  11.58   5.96  1.63   7.28  10.04  14.71   35.89
+SlopeDegrees                 7737   1.69   1.30  0.01   0.81   1.38   2.26   12.80
+DistanceToWaterwayM          7737 293.13 207.17  0.00 123.69 256.32 408.04 1260.00
+HistoricalWaterOccurrencePct 7737   0.07   1.56  0.00   0.00   0.00   0.00   64.00
+
+Rain events (n = 60):
+                n   Mean     SD   Min    Q1 Median     Q3    Max
+Rainfall24hMm  60  63.77  60.67  0.19 14.35  43.16 122.03 226.13
+Rainfall3DayMm 60 101.15  89.82  1.14 31.60  72.54 173.62 357.49
+Rainfall7DayMm 60 146.49 110.00 14.24 58.65 118.47 217.93 462.81
+  EventType Rainfall24hMm.Min Rainfall24hMm.Median Rainfall24hMm.Max
+1   Extreme             124.8                142.6             226.1
+2     Heavy              51.4                 78.1             121.1
+3     Light               0.2                  5.1              12.2
+4  Moderate              15.1                 20.2              35.0
+
+Risk level, all 232,110 household-events:
+   Level  Count Percent
+1    Low 156037    67.2
+2 Medium  56564    24.4
+3   High  19509     8.4
+
+Highest risk level reached by each household (30 events):
+   Level Count Percent
+1    Low  2197    28.4
+2 Medium  2721    35.2
+3   High  2819    36.4
+
+HousingMaterial (households):
+           Level Count Percent
+1       Concrete  3151    40.7
+2   SemiConcrete  3053    39.5
+3 LightMaterials  1533    19.8
+
+LocationType (households):
+         Level Count Percent
+1    Riverside  1518    19.6
+2 NearWaterway  2939    38.0
+3       Inland  3280    42.4
+
+HouseFloodHazard100yr (households):
+   Level Count Percent
+1   None  4074    52.7
+2    Low  1946    25.2
+3 Medium  1520    19.6
+4   High   197     2.5
+
+MGBFloodSusceptibility (households):
+      Level Count Percent
+1 NotMapped  4216    54.5
+2  Moderate  2540    32.8
+3      High   981    12.7
+
+Risk level by event type (row %):
+          
+             Low Medium  High
+  Light    100.0    0.0   0.0
+  Moderate  99.4    0.6   0.0
+  Heavy     55.6   41.6   2.8
+  Extreme   35.5   39.2  25.3
+
+HousingMaterial x highest risk level (row %):
+                
+                  Low Medium High
+  Concrete       31.2   46.9 21.9
+  SemiConcrete   27.1   30.7 42.2
+  LightMaterials 25.1   20.1 54.8
+
+LocationType x highest risk level (row %):
+              
+                Low Medium High
+  Riverside    23.2   25.7 51.1
+  NearWaterway 28.6   31.9 39.5
+  Inland       30.6   42.5 26.9
+
+HouseFloodHazard100yr x highest risk level (row %):
+        
+          Low Medium High
+  None   47.6   21.7 30.7
+  Low    13.1   58.6 28.3
+  Medium  0.3   45.1 54.7
+  High    0.0    4.6 95.4
+
+MGBFloodSusceptibility x highest risk level (row %):
+           
+             Low Medium High
+  NotMapped 52.1   35.4 12.5
+  Moderate   0.0   46.3 53.7
+  High       0.0    5.4 94.6
+
+Chi-square tests:
+                Variable ChiSquare df          p CramersV MinExpected
+1        HousingMaterial     608.6  4 2.123e-130   0.1983      435.31
+2           LocationType     297.6  4  3.599e-63   0.1387      431.05
+3  HouseFloodHazard100yr    2177.3  6  0.000e+00   0.3751       55.94
+4 MGBFloodSusceptibility    3953.0  4  0.000e+00   0.5054      278.56
+
+Kruskal-Wallis tests:
+             Variable Median_Low Median_Medium Median_High      H df         p EpsilonSq
+1     ElevationMeters       14.7         10.36        7.38 2022.9  2 0.000e+00   0.26149
+2 DistanceToWaterwayM      276.6        301.50      192.09  311.1  2 2.821e-68   0.04021
+3          Dependents        1.0          1.00        2.00  332.3  2 6.830e-73   0.04296
+
+Spearman correlations:
+                                                        Pair    n     rho         p
+1            Elevation vs number of High events (households) 7737 -0.4632 0.000e+00
+2 Distance to waterway vs number of High events (households) 7737 -0.2243 8.045e-89
+3       24-hour rainfall vs % of households High (60 events)   60  0.9127 3.312e-24
+
+Call:
+glm(formula = AnyHigh ~ HousingMaterial + HouseFloodHazard100yr + 
+    MGBFloodSusceptibility + I(ElevationMeters/5) + I(DistanceToWaterwayM/100) + 
+    Dependents, family = binomial, data = hh)
+
+Coefficients:
+                               Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                    -6.96800    0.28819 -24.178   <2e-16 ***
+HousingMaterialSemiConcrete     2.98810    0.12554  23.802   <2e-16 ***
+HousingMaterialLightMaterials   4.94107    0.16927  29.191   <2e-16 ***
+HouseFloodHazard100yrLow        0.02453    0.11161   0.220    0.826    
+HouseFloodHazard100yrMedium     3.63848    0.15135  24.040   <2e-16 ***
+HouseFloodHazard100yrHigh      11.50204    0.47636  24.146   <2e-16 ***
+MGBFloodSusceptibilityModerate  5.05123    0.16559  30.505   <2e-16 ***
+MGBFloodSusceptibilityHigh      8.81215    0.27892  31.594   <2e-16 ***
+I(ElevationMeters/5)           -0.61190    0.06588  -9.288   <2e-16 ***
+I(DistanceToWaterwayM/100)     -0.22632    0.02221 -10.191   <2e-16 ***
+Dependents                      1.00961    0.03982  25.352   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 10149.1  on 7736  degrees of freedom
+Residual deviance:  3325.4  on 7726  degrees of freedom
+AIC: 3347.4
+
+Number of Fisher Scoring iterations: 7
+
+
+Odds ratios:
+                             Term     OddsRatio       Lower95       Upper95          p
+1                     (Intercept)     0.0009415     0.0005352      0.001656 3.764e-129
+2     HousingMaterialSemiConcrete    19.8479675    15.5187825     25.384840 3.161e-125
+3   HousingMaterialLightMaterials   139.9192704   100.4143226    194.966233 2.549e-187
+4        HouseFloodHazard100yrLow     1.0248361     0.8234792      1.275429  8.260e-01
+5     HouseFloodHazard100yrMedium    38.0340204    28.2708940     51.168764 1.074e-127
+6       HouseFloodHazard100yrHigh 98917.2758615 38886.2621760 251621.701762 8.259e-129
+7  MGBFloodSusceptibilityModerate   156.2142325   112.9207104    216.106384 2.225e-204
+8      MGBFloodSusceptibilityHigh  6715.3729391  3887.3374383  11600.802458 4.500e-219
+9            I(ElevationMeters/5)     0.5423170     0.4766226      0.617066  1.573e-20
+10     I(DistanceToWaterwayM/100)     0.7974664     0.7635012      0.832943  2.172e-24
+11                     Dependents     2.7445298     2.5384619      2.967326 8.434e-142
+Households High in at least one event: 2819 of 7737 (36.4%)
+McFadden pseudo R-squared: 0.672   AUC: 0.971
+
+Chi-square (MGB) by hand: 3953.039  chisq.test: 3953.039 
+                   Check  Expected         R Match
+1           labels_fixed 1181.0000 1181.0000  TRUE
+2  incomplete_households  263.0000  263.0000  TRUE
+3         duplicate_rows 1200.0000 1200.0000  TRUE
+4    households_max_high 2819.0000 2819.0000  TRUE
+5           any_high_pct   36.4353   36.4353  TRUE
+6            chi_housing  608.6093  608.6093  TRUE
+7              V_housing    0.1983    0.1983  TRUE
+8            chi_noah100 2177.3043 2177.3043  TRUE
+9              V_noah100    0.3751    0.3751  TRUE
+10               chi_mgb 3953.0394 3953.0394  TRUE
+11                 V_mgb    0.5054    0.5054  TRUE
+12          chi_location  297.5828  297.5828  TRUE
+13            V_location    0.1387    0.1387  TRUE
+14           H_elevation 2022.9133 2022.9133  TRUE
+15        eps2_elevation    0.2615    0.2615  TRUE
+16            H_distance  311.0775  311.0775  TRUE
+17         eps2_distance    0.0402    0.0402  TRUE
+18         rho_elevation   -0.4632   -0.4632  TRUE
+19          rho_distance   -0.2243   -0.2243  TRUE
+20              rho_rain    0.9127    0.9127  TRUE
+21              OR_light  139.9193  139.9193  TRUE
+22           OR_mgb_high 6715.3729 6715.3729  TRUE
+23                   auc    0.9706    0.9706  TRUE
+24             pseudo_r2    0.6723    0.6723  TRUE
+24 of 24 values match the independent cross-check.
+
+Sensitivity check without the 10 events from 2020:
+                                      Result AllEvents Without2020
+1           Spearman rho, rainfall vs % High    0.9127      0.8690
+2            Cramer's V, MGB vs highest risk    0.5054      0.5307
+3 Households reaching High at least once (%)   36.4353     34.6517
+Events left: 50   Records left: 185661 
+
+Done. Files written to the outputs folder:
+ [1] "session_info.txt"                          "w2_missing_values.csv"                    
+ [3] "w3_chart1_risk_by_event_type.png"          "w3_chart2_elevation_by_highest_risk.png"  
+ [5] "w3_chart3_highest_risk_by_housing.png"     "w3_cleaning_log.csv"                      
+ [7] "w3_descriptive_households.csv"             "w3_descriptive_rain_events.csv"           
+ [9] "w3_household_summary.csv"                  "w3_risk_by_event_type_pct.csv"            
+[11] "w4_chart4_rainfall_vs_high_share.png"      "w4_chart5_odds_ratios.png"                
+[13] "w4_chi_square_tests.csv"                   "w4_kruskal_wallis_tests.csv"              
+[15] "w4_logistic_odds_ratios.csv"               "w4_rain_events_pct_high.csv"              
+[17] "w4_spearman_correlations.csv"              "w5_chart1_risk_by_event_type_pct.png"     
+[19] "w5_chart3_highest_risk_by_housing_pct.png" "w5_chart6_barangay_high_share.png"        
+[21] "w5_sensitivity_without_2020.csv"           "w5_verification.csv"                      

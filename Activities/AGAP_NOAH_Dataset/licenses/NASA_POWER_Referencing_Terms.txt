@@ -1,0 +1,33 @@
+NASA POWER - Referencing Guide
+==============================
+
+Source: https://power.larc.nasa.gov/docs/referencing/
+Copied from the provider's page on November 5, 2026. The provider's page is the authoritative version.
+
+--- Excerpt (verbatim) ---
+
+Referencing Guide When POWER data products are used in a publication include both POWER's Reference
+and POWER's Data Reference in any work product or publication. POWER's Reference The data was
+obtained from National Aeronautics and Space Administration (NASA) Langley Research Center's
+Prediction Of Worldwide Energy Resources (POWER) project funded through the NASA Earth Science
+Division. When referencing POWER data products please include the service name, version number, and
+date accessed. POWER's Data Reference The data was obtained from the POWER Project's Hourly 2.x.x
+version on YYYY/MM/DD. Publication Notification The POWER Project kindly requests that users of
+POWER data products send a reference, web link and/or a reprint of any published papers, reports, or
+a brief description of other uses (for example posters, oral presentations, etc.) of POWER data
+products to larc-power-project@mail.nasa.gov. Redistribution Notification To assist the POWER
+Project in providing the best service to the scientific community, the Project requests notification
+if POWER data is transmitted to other researchers.
+
+--- How it applies to this dataset ---
+
+Columns: Rainfall24hMm, Rainfall3DayMm, Rainfall7DayMm (and EventDate). Parameter PRECTOTCORR, Daily
+API, point 14.281 N, 121.398 E, 1991-2025.
+POWER's Reference: The data was obtained from National Aeronautics and Space Administration (NASA)
+Langley Research Center's Prediction Of Worldwide Energy Resources (POWER) project funded through
+the NASA Earth Science Division.
+POWER's Data Reference: The data was obtained from the POWER Project's Daily 2.x version on
+2026/10/26. (The exact version number was not recorded at download; re-download to confirm it if the
+thesis requires it.)
+NASA asks to be sent a reference or copy of publications that use the data: larc-power-
+project@mail.nasa.gov

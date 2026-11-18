@@ -1,0 +1,27 @@
+Source,Path,Santa Cruz only?,Evidence,Used in AGAP dataset
+Barangay boundaries,Sta_Cruz_Laguna_GIS_Download/output/barangays.geojson,YES,"26 barangays, all CITYMUN=Santa Cruz, PROVINCE=Laguna; extent 14.215-14.303 N, 121.365-121.431 E",Yes - barangay assignment
+Raster elevation_m,Sta_Cruz_Laguna_GIS_Download/output/elevation_m.tif,YES,"bounds 14.214-14.303 N, 121.365-121.432 E",Yes
+Raster slope_degrees,Sta_Cruz_Laguna_GIS_Download/output/slope_degrees.tif,YES,"bounds 14.214-14.303 N, 121.365-121.432 E",Yes
+Raster distance_to_osm_waterway_m,Sta_Cruz_Laguna_GIS_Download/output/distance_to_osm_waterway_m.tif,YES,"bounds 14.214-14.303 N, 121.365-121.432 E",Yes
+Raster land_cover_2021,Sta_Cruz_Laguna_GIS_Download/output/land_cover_2021.tif,YES,"bounds 14.214-14.303 N, 121.365-121.432 E",Yes
+Raster historical_surface_water_occurrence_pct_1984_2024,Sta_Cruz_Laguna_GIS_Download/output/historical_surface_water_occurrence_pct_1984_2024.tif,YES,"bounds 14.214-14.303 N, 121.365-121.432 E",No - not one of the listed variables
+Per-barangay raster clips and ZIP copy,"Sta_Cruz_Laguna_GIS_Download/output/barangays/, Sta_Cruz_Laguna_GIS_Download.zip",YES,Clips/copies of the Santa Cruz rasters above,No - duplicates of the full rasters
+MGB flood susceptibility,flood_risk_system/data/assessment_sources/mgb_flood_susceptibility_sta_cruz_laguna.geojson,NO,"3 features; bounds 13.526-14.940 N, 120.582-122.615 E - covers a much wider region (several provinces); not clipped to Santa Cruz",Partly - only to choose which households in a barangay are the exposed ones (shares come from Table 3.12)
+Overture building footprints,flood_risk_system/data/osm/buildings_overture.geojson,YES,"32,544 features; bounds 14.212-14.303 N, 121.363-121.434 E",Yes - household locations (only buildings inside Santa Cruz)
+OSM buildings,flood_risk_system/data/osm/buildings.geojson,NO,"31,807 features; bounds 14.120-14.420 N, 121.268-121.550 E - extends beyond Santa Cruz into neighbouring towns; must be clipped",No - Overture layer used instead
+OSM roads,flood_risk_system/data/osm/roads.geojson,NO,"10,908 features; bounds 14.100-14.431 N, 121.261-121.570 E - extends beyond Santa Cruz into neighbouring towns; must be clipped",No
+OSM waterways,flood_risk_system/data/osm/waterways.geojson,NO,"986 features; bounds 14.096-14.442 N, 121.257-121.652 E - extends beyond Santa Cruz into neighbouring towns; must be clipped",Indirectly - waterway-distance raster
+OSM points of interest,flood_risk_system/data/osm/pois.geojson,NO,"2,662 features; bounds 14.120-14.420 N, 121.271-121.549 E - extends beyond Santa Cruz into neighbouring towns; must be clipped",No
+OSM places,flood_risk_system/data/osm/place.geojson,NO,"375 features; bounds 14.120-14.416 N, 121.272-121.549 E - extends beyond Santa Cruz into neighbouring towns; must be clipped",No
+OSM addresses,flood_risk_system/data/osm/addresses.geojson,NO,"37 features; bounds 14.132-14.393 N, 121.272-121.541 E - extends beyond Santa Cruz into neighbouring towns; must be clipped",No
+OSM supplemental copies,flood_risk_system/data/osm/supplemental/,NO,Byte copies of the OSM layers above (same wider extent),No
+NASA POWER daily rainfall 1991-2025,nasa_power_daily_rainfall_features_1991_2025.csv,YES (gridded),"Point 14.281, 121.398 in Brgy. Calios; MERRA-2 cell ~50 km covers Santa Cruz and nearby towns",Yes - rainfall features
+Population Prone to Flood sheet,"Population Prone to Flood - Santa Cruz, Laguna, Region IV-A (CALABARZON).xlsx",YES,"Location: Santa Cruz, Laguna, Region IV-A (CALABARZON); 64,950 out of 123,574 (52.560%)",No - municipal context only (Table 3.12 used instead)
+Flood-risk app database (test entries),flood_risk_system/data/flood_risk.db,YES,"10 map-click test locations, all inside the Santa Cruz extent",No - a few manual test records
+Earlier synthetic datasets v1/v2 and synthetic_dataset_tools outputs,"flood_risk_system/data/synthetic_ml_v1, synthetic_ml_v2, synthetic_dataset_tools/",YES,Synthetic points inside Santa Cruz barangays,No - replaced by this new dataset (as requested)
+Philippine disaster-risk-mapping project,philippine-disaster-risk-mapping-master/,NO,"879 barangays in 12 other cities: Cagayan de Oro City, City of Mandaluyong, City of Muntinlupa, City of Navotas, Dagupan City, Davao City, Iloilo City, Legazpi City, Mandaue City, Palayan City, Tacloban City, Zamboanga City; no Santa Cruz, Laguna rows",No
+Root data/ folder,data/*.csv,NO,Copies of that project's outputs (e.g. Cagayan de Oro City); no Santa Cruz rows,No
+Root charts/ folder,charts/*.png,NO,Charts of the same other-city findings,No
+Root maps/ folder,maps/risk_map.html,NO,"Risk map of the other cities (Cagayan de Oro, Davao, Iloilo, ...)",No
+Root cv/ folder,cv/*.png,NO,"Satellite tiles named PH104305011/013/045 = barangay codes in Cagayan de Oro City, Misamis Oriental",No
+Urban flood modelling benchmark,urban-flood-modelling/,NO,Projected x/y grid with ground elevation 296-359 m; Santa Cruz is 1-40 m above sea level; no location/CRS supplied (competition benchmark),No

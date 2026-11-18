@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Report a Flood · Santa Cruz MDRRMO</title><link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="/static/vendor/leaflet.css"><link rel="stylesheet" href="/static/ops.css"></head>
+<body><main class="report-page">
+<header><a href="/">←</a><b>Report a flood or emergency</b></header>
+<div class="emergency"><b>Life in danger right now?</b> Call <b>911</b> first, then send this report so the rescue team gets your exact location.</div>
+
+<form id="report" class="card" novalidate>
+  <label>What is happening?</label>
+  <div class="choice" id="types"></div>
+
+  <label>Where? <span class="muted">Tap the map or use your phone's location.</span></label>
+  <div class="row"><button type="button" id="gps" class="ghost">📍 Use my current location</button><span id="loc-text" class="small-text muted">No location yet</span></div>
+  <div id="rmap"></div>
+
+  <label>How deep is the water?</label>
+  <div class="choice" id="depths"></div>
+
+  <div class="grid2">
+    <label>People needing help<input id="people" type="number" min="0" max="10000" inputmode="numeric" placeholder="e.g. 4"></label>
+    <label>Your name (optional)<input id="name" maxlength="120" autocomplete="name"></label>
+  </div>
+  <label>Mobile number (optional, so responders can call back)<input id="contact" maxlength="40" inputmode="tel" autocomplete="tel"></label>
+  <label>Details (landmark, elderly or PWD present, injuries…)<textarea id="desc" maxlength="1000"></textarea></label>
+  <p class="error" id="err" role="alert"></p>
+  <button class="big" id="submit" type="submit">Send report</button>
+  <p class="small-text muted">Your name and number are seen only by MDRRMO staff. The status page shows only the report's progress.</p>
+</form>
+
+<div class="card hidden" id="done">
+  <p style="text-align:center;margin:0">Report received. Your reference number:</p>
+  <div class="ref" id="ref"></div>
+  <p class="small-text muted" style="text-align:center" id="done-msg"></p>
+  <button class="ghost big" type="button" id="again">Send another report</button>
+</div>
+
+<div class="card">
+  <label>Check a report's status<div class="row" style="margin-top:4px"><input id="lookup" placeholder="RPT-XXXXXX" style="flex:1;width:auto"><button type="button" id="check">Check</button></div></label>
+  <div id="status" class="small-text"></div>
+</div>
+</main>
+<script src="/static/vendor/leaflet.js"></script><script src="/static/report.js"></script></body></html>

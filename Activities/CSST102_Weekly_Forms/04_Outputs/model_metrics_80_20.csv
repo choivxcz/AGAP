@@ -1,0 +1,4 @@
+Model,Accuracy,BalancedAccuracy,MacroF1,WeightedF1,CohenKappa,MCC,Precision_Low,Recall_Low,F1_Low,Precision_Medium,Recall_Medium,F1_Medium,Precision_High,Recall_High,F1_High
+With class weights (baseline),0.9872,0.9765,0.9755,0.9873,0.9731,0.9731,0.997,0.9943,0.9957,0.9702,0.9769,0.9735,0.9561,0.9584,0.9573
+Without class weights,0.9877,0.9743,0.9767,0.9877,0.974,0.9741,0.9952,0.996,0.9956,0.9724,0.9766,0.9745,0.9696,0.9504,0.9599
+Barangay hazard only,0.8633,0.836,0.8157,0.8649,0.7187,0.7194,0.9304,0.9006,0.9153,0.7367,0.7649,0.7505,0.7283,0.8425,0.7812

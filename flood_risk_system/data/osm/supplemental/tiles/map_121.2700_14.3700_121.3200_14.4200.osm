@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.0 (1679283 spike-06.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <bounds minlat="14.3700000" minlon="121.2700000" maxlat="14.4200000" maxlon="121.3200000"/>
+ <node id="8562471636" visible="true" version="1" changeset="101757936" timestamp="2021-03-26T04:46:02Z" user="Sodermalm" uid="9625494" lat="14.3826039" lon="121.3314897"/>
+ <node id="9666150821" visible="true" version="2" changeset="145433694" timestamp="2023-12-23T11:18:23Z" user="seav" uid="11126" lat="14.3314199" lon="121.2852858"/>
+ <node id="9666150822" visible="true" version="3" changeset="156461993" timestamp="2024-09-11T01:01:46Z" user="urbanroamer" uid="2682262" lat="14.3491578" lon="121.2851309"/>
+ <node id="9666150823" visible="true" version="2" changeset="145433694" timestamp="2023-12-23T11:18:23Z" user="seav" uid="11126" lat="14.3869095" lon="121.3182266"/>
+ <node id="9666150824" visible="true" version="3" changeset="156461993" timestamp="2024-09-11T01:01:46Z" user="urbanroamer" uid="2682262" lat="14.3714817" lon="121.2830537"/>
+ <node id="10744449652" visible="true" version="2" changeset="145433694" timestamp="2023-12-23T11:18:23Z" user="seav" uid="11126" lat="14.3179910" lon="121.2824308"/>
+ <node id="11446040082" visible="true" version="1" changeset="145433694" timestamp="2023-12-23T11:18:23Z" user="seav" uid="11126" lat="14.3888496" lon="121.2989266"/>
+ <node id="11446040083" visible="true" version="1" changeset="145433694" timestamp="2023-12-23T11:18:23Z" user="seav" uid="11126" lat="14.3869095" lon="121.3283924"/>
+ <node id="11446040084" visible="true" version="1" changeset="145433694" timestamp="2023-12-23T11:18:23Z" user="seav" uid="11126" lat="14.3843652" lon="121.3310189"/>
+ <node id="11446040085" visible="true" version="2" changeset="156461993" timestamp="2024-09-11T01:01:46Z" user="urbanroamer" uid="2682262" lat="14.3886733" lon="121.2776789"/>
+ <node id="11446043664" visible="true" version="4" changeset="177836126" timestamp="2026-01-29T08:32:53Z" user="Taya_S" uid="15944521" lat="14.4200193" lon="121.2697710"/>
+ <node id="11446043665" visible="true" version="2" changeset="156540430" timestamp="2024-09-12T17:57:45Z" user="urbanroamer" uid="2682262" lat="14.4515332" lon="121.2590425"/>
+ <node id="11446043666" visible="true" version="2" changeset="156540430" timestamp="2024-09-12T17:57:45Z" user="urbanroamer" uid="2682262" lat="14.4746110" lon="121.2517475"/>
+ <node id="11446043667" visible="true" version="1" changeset="145434073" timestamp="2023-12-23T11:31:52Z" user="seav" uid="11126" lat="14.4837713" lon="121.2499790"/>
+ <node id="11446043668" visible="true" version="2" changeset="156540430" timestamp="2024-09-12T17:57:45Z" user="urbanroamer" uid="2682262" lat="14.4903719" lon="121.2462495"/>
+ <node id="11446059369" visible="true" version="2" changeset="156540430" timestamp="2024-09-12T17:57:45Z" user="urbanroamer" uid="2682262" lat="14.4928652" lon="121.2426443"/>
+ <node id="11446059370" visible="true" version="3" changeset="158641322" timestamp="2024-11-02T00:00:45Z" user="urbanroamer" uid="2682262" lat="14.4971586" lon="121.2395122"/>
+ <node id="11446059371" visible="true" version="1" changeset="145434073" timestamp="2023-12-23T11:31:52Z" user="seav" uid="11126" lat="14.4974626" lon="121.2387208"/>
+ <node id="11446059372" visible="true" version="1" changeset="145434073" timestamp="2023-12-23T11:31:52Z" user="seav" uid="11126" lat="14.4977681" lon="121.2379074"/>
+ <node id="12173297128" visible="true" version="3" changeset="177836126" timestamp="2026-01-29T08:32:53Z" user="Taya_S" uid="15944521" lat="14.4267501" lon="121.2610350"/>
+ <node id="12306008124" visible="true" version="1" changeset="158641322" timestamp="2024-11-02T00:00:45Z" user="urbanroamer" uid="2682262" lat="14.3997372" lon="121.2748878"/>
+ <node id="12443513982" visible="true" version="2" changeset="160560055" timestamp="2024-12-24T02:00:32Z" user="urbanroamer" uid="2682262" lat="14.4354952" lon="121.2704960"/>
+ <way id="1051854430" visible="true" version="2" changeset="145433694" timestamp="2023-12-23T11:18:23Z" user="seav" uid="11126">
+  <nd ref="8562471636"/>
+  <nd ref="11446040084"/>
+  <nd ref="11446040083"/>
+  <nd ref="9666150823"/>
+  <tag k="admin_level" v="6"/>
+  <tag k="boundary" v="administrative"/>
+  <tag k="maritime" v="yes"/>
+ </way>
+ <way id="1051854431" visible="true" version="3" changeset="145434073" timestamp="2023-12-23T11:31:52Z" user="seav" uid="11126">
+  <nd ref="10744449652"/>
+  <nd ref="9666150821"/>
+  <nd ref="9666150822"/>
+  <nd ref="9666150824"/>
+  <nd ref="11446040085"/>
+  <tag k="admin_level" v="6"/>
+  <tag k="boundary" v="administrative"/>
+  <tag k="maritime" v="yes"/>
+ </way>
+ <way id="1233497705" visible="true" version="1" changeset="145434073" timestamp="2023-12-23T11:31:52Z" user="seav" uid="11126">
+  <nd ref="11446040085"/>
+  <nd ref="11446040082"/>
+  <nd ref="9666150823"/>
+  <tag k="admin_level" v="6"/>
+  <tag k="boundary" v="administrative"/>
+  <tag k="maritime" v="yes"/>
+ </way>
+ <way id="1233497706" visible="true" version="8" changeset="177836126" timestamp="2026-01-29T08:32:53Z" user="Taya_S" uid="15944521">
+  <nd ref="11446059372"/>
+  <nd ref="11446059371"/>
+  <nd ref="11446059370"/>
+  <nd ref="11446059369"/>
+  <nd ref="11446043668"/>
+  <nd ref="11446043667"/>
+  <nd ref="11446043666"/>
+  <nd ref="11446043665"/>
+  <nd ref="12173297128"/>
+  <nd ref="11446043664"/>
+  <nd ref="12306008124"/>
+  <tag k="admin_level" v="6"/>
+  <tag k="boundary" v="administrative"/>
+  <tag k="maritime" v="yes"/>
+ </way>
+ <way id="1330583675" visible="true" version="1" changeset="158728095" timestamp="2024-11-04T07:29:19Z" user="OliveraM" uid="20382961">
+  <nd ref="12306008124"/>
+  <nd ref="11446040085"/>
+  <tag k="admin_level" v="6"/>
+  <tag k="boundary" v="administrative"/>
+  <tag k="maritime" v="yes"/>
+ </way>
+ <way id="1345013085" visible="true" version="1" changeset="160529565" timestamp="2024-12-23T09:23:57Z" user="Aleksandar1994" uid="3733993">
+  <nd ref="12443513982"/>
+  <nd ref="12306008124"/>
+  <tag k="admin_level" v="6"/>
+  <tag k="boundary" v="administrative"/>
+  <tag k="maritime" v="yes"/>
+ </way>
+ <relation id="1504641" visible="true" version="96" changeset="190781041" timestamp="2026-10-20T10:11:45Z" user="plato59" uid="24209638">
+  <member type="node" ref="305704505" role="label"/>
+  <member type="node" ref="165952298" role="admin_centre"/>
+  <member type="way" ref="1412963645" role="outer"/>
+  <member type="way" ref="1412963648" role="outer"/>
+  <member type="way" ref="49743081" role="outer"/>
+  <member type="way" ref="1302289057" role="outer"/>
+  <member type="way" ref="53055489" role="outer"/>
+  <member type="way" ref="53055500" role="outer"/>
+  <member type="way" ref="1451227724" role="outer"/>
+  <member type="way" ref="53055523" role="outer"/>
+  <member type="way" ref="1484644666" role="outer"/>
+  <member type="way" ref="53055539" role="outer"/>
+  <member type="way" ref="225380176" role="outer"/>
+  <member type="way" ref="693438091" role="outer"/>
+  <member type="way" ref="693438092" role="outer"/>
+  <member type="way" ref="238183974" role="outer"/>
+  <member type="way" ref="225380175" role="outer"/>
+  <member type="way" ref="1157111547" role="outer"/>
+  <member type="way" ref="1157111548" role="outer"/>
+  <member type="way" ref="5050710" role="outer"/>
+  <member type="way" ref="35024128" role="outer"/>
+  <member type="way" ref="35068336" role="outer"/>
+  <member type="way" ref="35068337" role="outer"/>
+  <member type="way" ref="81484955" role="outer"/>
+  <member type="way" ref="638673728" role="outer"/>
+  <member type="way" ref="35068269" role="outer"/>
+  <member type="way" ref="35068267" role="outer"/>
+  <member type="way" ref="130995452" role="outer"/>
+  <member type="way" ref="797393028" role="outer"/>
+  <member type="way" ref="797393029" role="outer"/>
+  <member type="way" ref="1332718045" role="outer"/>
+  <member type="way" ref="186255473" role="outer"/>
+  <member type="way" ref="48787277" role="outer"/>
+  <member type="way" ref="998973171" role="outer"/>
+  <member type="way" ref="28723033" role="outer"/>
+  <member type="way" ref="186255472" role="outer"/>
+  <member type="way" ref="48787345" role="outer"/>
+  <member type="way" ref="1151170301" role="outer"/>
+  <member type="way" ref="1317574038" role="outer"/>
+  <member type="way" ref="48787344" role="outer"/>
+  <member type="way" ref="1317574033" role="outer"/>
+  <member type="way" ref="1317574052" role="outer"/>
+  <member type="way" ref="1317574050" role="outer"/>
+  <member type="way" ref="1317574051" role="outer"/>
+  <member type="way" ref="1317786983" role="outer"/>
+  <member type="way" ref="1317574053" role="outer"/>
+  <member type="way" ref="1158437859" role="outer"/>
+  <member type="way" ref="1514251289" role="outer"/>
+  <member type="way" ref="81641544" role="outer"/>
+  <member type="way" ref="81641521" role="outer"/>
+  <member type="way" ref="116112490" role="outer"/>
+  <member type="way" ref="28085103" role="outer"/>
+  <member type="way" ref="778709648" role="outer"/>
+  <member type="way" ref="1337276839" role="outer"/>
+  <member type="way" ref="778715824" role="outer"/>
+  <member type="way" ref="778715822" role="outer"/>
+  <member type="way" ref="1344987423" role="outer"/>
+  <member type="way" ref="778581049" role="outer"/>
+  <member type="way" ref="1051854428" role="outer"/>
+  <member type="way" ref="778432432" role="outer"/>
+  <member type="way" ref="1051854429" role="outer"/>
+  <member type="way" ref="819973923" role="outer"/>
+  <member type="way" ref="960110720" role="outer"/>
+  <member type="way" ref="960110725" role="outer"/>
+  <member type="way" ref="960110722" role="outer"/>
+  <member type="way" ref="960110727" role="outer"/>
+  <member type="way" ref="1233496538" role="outer"/>
+  <member type="way" ref="928847274" role="outer"/>
+  <member type="way" ref="928847273" role="outer"/>
+  <member type="way" ref="928847272" role="outer"/>
+  <member type="way" ref="928847271" role="outer"/>
+  <member type="way" ref="928847270" role="outer"/>
+  <member type="way" ref="928847269" role="outer"/>
+  <member type="way" ref="820115384" role="outer"/>
+  <member type="way" ref="820115382" role="outer"/>
+  <member type="way" ref="819973921" role="outer"/>
+  <member type="way" ref="225595175" role="outer"/>
+  <member type="way" ref="225595213" role="outer"/>
+  <member type="way" ref="114932319" role="outer"/>
+  <member type="way" ref="225595155" role="outer"/>
+  <member type="way" ref="27906798" role="outer"/>
+  <member type="way" ref="107941548" role="outer"/>
+  <member type="way" ref="900668552" role="outer"/>
+  <member type="way" ref="81606472" role="outer"/>
+  <member type="way" ref="1337340054" role="outer"/>
+  <member type="way" ref="237490780" role="outer"/>
+  <member type="way" ref="886863543" role="outer"/>
+  <member type="way" ref="1078236525" role="outer"/>
+  <member type="way" ref="1078236526" role="outer"/>
+  <member type="way" ref="83890357" role="outer"/>
+  <member type="way" ref="617961502" role="outer"/>
+  <member type="way" ref="850840083" role="outer"/>
+  <member type="way" ref="850840078" role="outer"/>
+  <member type="way" ref="1550810322" role="outer"/>
+  <member type="way" ref="83890359" role="outer"/>
+  <member type="way" ref="617961504" role="outer"/>
+  <member type="way" ref="617961503" role="outer"/>
+  <member type="way" ref="387272666" role="outer"/>
+  <member type="way" ref="387272667" role="outer"/>
+  <member type="way" ref="225377540" role="outer"/>
+  <member type="way" ref="388212028" role="outer"/>
+  <member type="way" ref="225377542" role="outer"/>
+  <member type="way" ref="1337412912" role="outer"/>
+  <member type="way" ref="225377539" role="outer"/>
+  <member type="way" ref="1412963647" role="outer"/>
+  <member type="relation" ref="18267023" role="subarea"/>
+  <member type="relation" ref="18322731" role="subarea"/>
+  <member type="relation" ref="18458017" role="subarea"/>
+  <member type="relation" ref="18455101" role="subarea"/>
+  <member type="relation" ref="3008044" role="subarea"/>
+  <member type="relation" ref="18458019" role="subarea"/>
+  <tag k="admin_level" v="4"/>
+  <tag k="admin_type:PH" v="province"/>
+  <tag k="boundary" v="administrative"/>
+  <tag k="int_ref" v="PH-RIZ"/>
+  <tag k="is_in:archipelago" v="Luzon"/>
+  <tag k="is_in:region" v="Calabarzon"/>
+  <tag k="ISO3166-2" v="PH-RIZ"/>
+  <tag k="name" v="Rizal"/>
+  <tag k="name:en" v="Rizal"/>
+  <tag k="name:eo" v="Rizalo"/>
+  <tag k="name:ko" v="리살주"/>
+  <tag k="name:ru" v="Рисаль"/>
+  <tag k="name:tl" v="Rizal"/>
+  <tag k="official_name" v="Province of Rizal"/>
+  <tag k="old_ref" v="045800000"/>
+  <tag k="population" v="3330143"/>
+  <tag k="population:date" v="2020-05-01"/>
+  <tag k="ref" v="0405800000"/>
+  <tag k="type" v="boundary"/>
+  <tag k="wikidata" v="Q13874"/>
+  <tag k="wikipedia" v="en:Rizal (province)"/>
+ </relation>
+ <relation id="14039304" visible="true" version="6" changeset="169344606" timestamp="2025-07-23T13:26:52Z" user="seav" uid="11126">
+  <member type="node" ref="198520514" role="label"/>
+  <member type="way" ref="1051854431" role="outer"/>
+  <member type="way" ref="1233496539" role="outer"/>
+  <member type="way" ref="960110727" role="outer"/>
+  <member type="way" ref="960110722" role="outer"/>
+  <member type="way" ref="960110725" role="outer"/>
+  <member type="way" ref="960110720" role="outer"/>
+  <member type="way" ref="819973923" role="outer"/>
+  <member type="way" ref="1051854429" role="outer"/>
+  <member type="way" ref="778432432" role="outer"/>
+  <member type="way" ref="1051854433" role="outer"/>
+  <member type="way" ref="1051854430" role="outer"/>
+  <member type="way" ref="1233497705" role="outer"/>
+  <tag k="admin_level" v="6"/>
+  <tag k="alt_name" v="Jala-jala"/>
+  <tag k="border_type" v="municipality"/>
+  <tag k="boundary" v="administrative"/>
+  <tag k="name" v="Jalajala"/>
+  <tag k="name:pronunciation" v="hälɐ̞ˈhalɐ"/>
+  <tag k="old_ref" v="045807000"/>
+  <tag k="population" v="34901"/>
+  <tag k="population:date" v="2024-07-01"/>
+  <tag k="postal_code" v="1990"/>
+  <tag k="ref" v="0405807000"/>
+  <tag k="type" v="boundary"/>
+  <tag k="wikidata" v="Q106804"/>
+  <tag k="wikimedia_commons" v="Category:Jalajala"/>
+  <tag k="wikipedia" v="en:Jalajala"/>
+ </relation>
+ <relation id="16863234" visible="true" version="6" changeset="158728095" timestamp="2024-11-04T07:29:19Z" user="OliveraM" uid="20382961">
+  <member type="way" ref="1233496542" role="outer"/>
+  <member type="way" ref="1233497709" role="outer"/>
+  <member type="way" ref="1233497706" role="outer"/>
+  <member type="way" ref="1330583675" role="outer"/>
+  <member type="way" ref="1051854431" role="outer"/>
+  <member type="way" ref="1188389999" role="outer"/>
+  <member type="way" ref="1154900915" role="outer"/>
+  <member type="way" ref="1188389998" role="outer"/>
+  <member type="way" ref="1188389995" role="outer"/>
+  <member type="way" ref="1188389997" role="outer"/>
+  <member type="way" ref="1188389996" role="outer"/>
+  <member type="node" ref="198497211" role="label"/>
+  <tag k="admin_level" v="6"/>
+  <tag k="boundary" v="administrative"/>
+  <tag k="name" v="Cardona"/>
+  <tag k="name:pronunciation" v="karˈdona"/>
+  <tag k="old_ref" v="045806000"/>
+  <tag k="population" v="50143"/>
+  <tag k="population:date" v="2020-05-01"/>
+  <tag k="ref" v="0405806000"/>
+  <tag k="source:population" v="Philippine Statistics Authority"/>
+  <tag k="type" v="boundary"/>
+  <tag k="wikidata" v="Q106796"/>
+  <tag k="wikipedia" v="en:Cardona, Rizal"/>
+ </relation>
+ <relation id="18239999" visible="true" version="5" changeset="160595185" timestamp="2024-12-25T08:08:12Z" user="urbanroamer" uid="2682262">
+  <member type="way" ref="1345013085" role="outer"/>
+  <member type="way" ref="1345397325" role="outer"/>
+  <member type="way" ref="1330054445" role="outer"/>
+  <member type="way" ref="1330054447" role="outer"/>
+  <member type="way" ref="1330054444" role="outer"/>
+  <member type="way" ref="1330054443" role="outer"/>
+  <member type="way" ref="41697072" role="outer"/>
+  <member type="way" ref="1233497703" role="outer"/>
+  <member type="way" ref="126322894" role="outer"/>
+  <member type="way" ref="1314571625" role="outer"/>
+  <member type="way" ref="1233497709" role="outer"/>
+  <member type="way" ref="1233497706" role="outer"/>
+  <tag k="admin_level" v="6"/>
+  <tag k="boundary" v="administrative"/>
+  <tag k="name" v="Morong"/>
+  <tag k="type" v="boundary"/>
+  <tag k="wikidata" v="Q106810"/>
+  <tag k="wikipedia" v="en:Morong, Rizal"/>
+ </relation>
+ <relation id="18455101" visible="true" version="4" changeset="174727620" timestamp="2025-11-16T13:37:16Z" user="hangukhistory" uid="17860844">
+  <member type="way" ref="1344987425" role="outer"/>
+  <member type="way" ref="1345013085" role="outer"/>
+  <member type="way" ref="1330583675" role="outer"/>
+  <member type="way" ref="1233497705" role="outer"/>
+  <member type="way" ref="1051854430" role="outer"/>
+  <member type="way" ref="1051854433" role="outer"/>
+  <member type="way" ref="1051854428" role="outer"/>
+  <member type="way" ref="778581049" role="outer"/>
+  <member type="way" ref="1344987423" role="outer"/>
+  <member type="way" ref="1344987422" role="outer"/>
+  <tag k="admin_level" v="6"/>
+  <tag k="boundary" v="administrative"/>
+  <tag k="name" v="Pililla"/>
+  <tag k="name:ko" v="필리야"/>
+  <tag k="type" v="boundary"/>
+  <tag k="wikidata" v="Q106817"/>
+  <tag k="wikipedia" v="en:Pililla"/>
+ </relation>
+</osm>

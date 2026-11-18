@@ -1,0 +1,24 @@
+JRC Global Surface Water - License
+==================================
+
+Source: https://global-surface-water.appspot.com/download
+Copied from the provider's page on November 5, 2026. The provider's page is the authoritative version.
+
+--- Excerpt (verbatim) ---
+
+License All data here is produced under the Copernicus Programme and is provided free of charge,
+without restriction of use. For the full license information see the Copernicus Regulation.
+Publications, models and data products that make use of these datasets must include proper
+acknowledgement, including citing datasets and the journal article as in the following citation.
+Citation Jean-Francois Pekel, Andrew Cottam, Noel Gorelick, Alan S. Belward, High-resolution mapping
+of global surface water and its long-term changes. Nature 540, 418-422 (2016).
+(doi:10.1038/nature20584) If you are using the data as a layer in a published map, please include
+the following attribution text: 'Source: EC JRC/Google'
+
+--- How it applies to this dataset ---
+
+Column: HistoricalWaterOccurrencePct (JRC GSW v1.5 occurrence, 1984-2024).
+Cite: Pekel, J.-F., Cottam, A., Gorelick, N., & Belward, A. S. (2016). High-resolution mapping of
+global surface water and its long-term changes. Nature, 540, 418-422.
+https://doi.org/10.1038/nature20584
+On maps: Source: EC JRC/Google

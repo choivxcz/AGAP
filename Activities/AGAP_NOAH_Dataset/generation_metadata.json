@@ -1,0 +1,174 @@
+{
+  "name": "Project AGAP NOAH flood-risk dataset - Santa Cruz, Laguna",
+  "version": "2.8",
+  "seed": 20261103,
+  "license_note": "Contains Project NOAH data (ODC-ODbL 1.0); share derived datasets under ODC-ODbL with attribution",
+  "rain_return_levels_24h_mm": {
+    "2yr": 96.8,
+    "5yr": 132.6,
+    "25yr": 186.2,
+    "100yr": 230.4
+  },
+  "rain_return_fit": "Gumbel (method of moments) on 1991-2025 NASA POWER annual maximum 24 h rain",
+  "label_cutoffs": [
+    15.0,
+    40.0
+  ],
+  "clean": {
+    "file": "agap_noah_dataset.csv",
+    "rows": 232110,
+    "households": 7737,
+    "class_counts": {
+      "Low": 156037,
+      "Medium": 56564,
+      "High": 19509
+    },
+    "households_removed_incomplete": 263
+  },
+  "training": {
+    "file": "agap_noah_training.csv",
+    "rows": 232110,
+    "columns": [
+      "Age",
+      "HousingMaterial",
+      "HouseMembers",
+      "ChildrenCount",
+      "ElderCount",
+      "PWDCount",
+      "ElevationMeters",
+      "SlopeDegrees",
+      "DistanceToWaterwayM",
+      "LocationType",
+      "LandCoverType",
+      "HistoricalWaterOccurrencePct",
+      "FloodHazard5yr",
+      "FloodHazard25yr",
+      "FloodHazard100yr",
+      "HouseFloodHazard5yr",
+      "HouseFloodHazard25yr",
+      "HouseFloodHazard100yr",
+      "MGBFloodSusceptibility",
+      "Rainfall24hMm",
+      "Rainfall3DayMm",
+      "Rainfall7DayMm",
+      "RiskLevel"
+    ],
+    "removed_columns": [
+      "HouseholdID",
+      "Barangay",
+      "Latitude",
+      "Longitude",
+      "EventDate"
+    ]
+  },
+  "raw": {
+    "file": "agap_noah_dataset_raw.csv",
+    "rows": 241200,
+    "households": 8000,
+    "class_counts": {
+      "Low": 161427,
+      "Medium": 59359,
+      "High": 20414
+    },
+    "duplicate_rows_added": 1200,
+    "labels_flipped": 1225
+  },
+  "households_by_noah_100yr": {
+    "Medium": 4782,
+    "Low": 2739,
+    "High": 216
+  },
+  "flood_hazard_method": "per barangay: the highest NOAH class (Low/Medium/High) whose area, counting that class or worse, covers at least 25% of the barangay; None if less than 25% of the barangay is inside NOAH flood zones",
+  "label_hazard_method": "Event flood hazard = max(NOAH class at the house along the rain scale, MGB class at the house x min(1, rain / 25-year rain)); MGB Moderate 2, High 2.5, VeryHigh 3. Inputs: FloodHazard* = barangay NOAH class; HouseFloodHazard* = NOAH class at the house; MGBFloodSusceptibility = MGB class at the house",
+  "terrain_index": {
+    "weights": {
+      "Elevation": 0.35,
+      "Distance": 0.25,
+      "Slope": 0.15,
+      "LandCover": 0.15,
+      "PastWater": 0.1
+    },
+    "elevation_m": [
+      3,
+      20
+    ],
+    "distance_m": [
+      50,
+      500
+    ],
+    "slope_deg": [
+      0,
+      5
+    ],
+    "past_water_pct": [
+      0,
+      20
+    ],
+    "land_cover": {
+      "BuiltUp": 1.0,
+      "HerbaceousWetland": 1.0,
+      "PermanentWater": 1.0,
+      "Mangroves": 1.0,
+      "Cropland": 0.6,
+      "BareSparseVegetation": 0.6,
+      "Grassland": 0.5,
+      "Shrubland": 0.4,
+      "TreeCover": 0.3
+    },
+    "adjust": 0.25,
+    "terrain_only_max": 1.0,
+    "rule": "event hazard = min(3, max(map hazard x (0.75 + 0.5 x index), 1.0 x index x min(1, rain / 25-year rain)))"
+  },
+  "households_by_mgb": {
+    "NotMapped": 4216,
+    "Moderate": 2540,
+    "High": 981
+  },
+  "households_by_house_noah_100yr": {
+    "None": 4074,
+    "Low": 1946,
+    "Medium": 1520,
+    "High": 197
+  },
+  "events_by_type": {
+    "Extreme": 15,
+    "Heavy": 15,
+    "Moderate": 15,
+    "Light": 15
+  },
+  "events_reaching_5yr_rain": 15,
+  "sources": {
+    "agap_households": {
+      "path": "Activities\\AGAP_Dataset\\agap_flood_vulnerability_dataset.csv",
+      "sha256": "5a6340f988937e64c84019bd52cac36d5934c141ab1c445e8656fbaf2217475c"
+    },
+    "agap_label_audit": {
+      "path": "Activities\\AGAP_Dataset\\label_audit.csv",
+      "sha256": "17ae0f68a5b0d5d7997de6962cf8ae07252832eb35709ac757f92dbccb6e64f0"
+    },
+    "rainfall": {
+      "path": "nasa_power_daily_rainfall_features_1991_2025.csv",
+      "sha256": "d624eb750b695b203c79b8c8b75f4d928b4792526bbd5a028a8cfa1f452917ce"
+    },
+    "noah_barangay_area": {
+      "path": "NOAH_Flood_Hazard_Laguna\\santa_cruz_flood_hazard_by_barangay.csv",
+      "sha256": "ad8392c780e334df7f739cfc801ffc388b1f7dc3e520527098d138d6c3032d62"
+    },
+    "noah_zones_5yr": {
+      "path": "NOAH_Flood_Hazard_Laguna\\santa_cruz_flood_hazard_5yr.geojson",
+      "sha256": "53511e04c6535c7b27b674e183e4648075475c180174cc887a8348d9715b09ee"
+    },
+    "noah_zones_25yr": {
+      "path": "NOAH_Flood_Hazard_Laguna\\santa_cruz_flood_hazard_25yr.geojson",
+      "sha256": "dcc955eba01a0269dd8617aabf27c596815d7c03b0b74ab4168977e7f0f5c203"
+    },
+    "noah_zones_100yr": {
+      "path": "NOAH_Flood_Hazard_Laguna\\santa_cruz_flood_hazard_100yr.geojson",
+      "sha256": "9469b0ea7c1cd95720c972453a98ae479c018dddba065b9e8a790b877e67ff80"
+    },
+    "mgb": {
+      "path": "MGB_Flood_Susceptibility\\mgb_flood_susceptibility_sta_cruz_laguna.geojson",
+      "sha256": "39a821c559d30e701dcb961ab76a2016abd99f61c13b8b2fcd87072b9ab9cd42"
+    }
+  }
+}

@@ -1,0 +1,5 @@
+geopandas>=1.0
+rasterio>=1.4
+requests>=2.32
+scipy>=1.14
+pyogrio>=0.10

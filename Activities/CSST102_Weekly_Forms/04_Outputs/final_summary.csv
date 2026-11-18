@@ -1,0 +1,5 @@
+Model,Test accuracy,Test macro F1,Test F1 High,Test recall High,CV macro F1 (mean),CV F1 High (mean)
+Baseline gradient boosting (Week 3),0.9872,0.9755,0.9573,0.9584,0.9756,0.9589
+Final model (Week 5),0.989,0.9791,0.9638,0.9689,0.9799,0.9672
+Random Forest,0.9735,0.9491,0.9109,0.905,,
+Logistic Regression,0.8894,0.8458,0.8068,0.9166,,

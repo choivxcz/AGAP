@@ -1,0 +1,20 @@
+Overture Maps - Buildings theme attribution
+===========================================
+
+Source: https://docs.overturemaps.org/attribution/
+Copied from the provider's page on November 5, 2026. The provider's page is the authoritative version.
+
+--- Excerpt (verbatim) ---
+
+Buildings. License for theme: ODbL. © OpenStreetMap contributors. Available under the Open Database
+License. Esri Community Maps contributors. Available under CC BY 4.0. Global ML Building Footprints.
+Licensed by Microsoft under the Open Database License. Google Open Buildings. Available under CC BY
+4.0. [...]
+
+--- How it applies to this dataset ---
+
+Columns: Latitude and Longitude (household map pins = centroids of Google and Microsoft building
+footprints taken from the Overture buildings theme). These are reference columns and are not in
+agap_noah_training.csv.
+Attribution: Building footprints © Overture Maps Foundation; Microsoft Global ML Building Footprints
+(ODbL); Google Open Buildings (CC BY 4.0).

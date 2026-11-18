@@ -1,0 +1,7 @@
+{
+  "created": "2026-10-25",
+  "barangay_count": 26,
+  "crs": "EPSG:32651",
+  "distance_units": "metres",
+  "historical_water": "JRC GSW v1.5 occurrence (1984-2024)"
+}

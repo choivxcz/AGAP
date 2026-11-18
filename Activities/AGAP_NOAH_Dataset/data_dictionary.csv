@@ -1,0 +1,29 @@
+Column,Role,Type,Unit,Origin,Description
+HouseholdID,ID,text,,Generated (AGAP v1.0),Household identifier (one real building per household)
+Barangay,ID,text,,Barangay boundary,Santa Cruz barangay containing the pin
+Latitude,Location (map pin),float,deg,Real building,"Map pin only (WGS84), not a model input"
+Longitude,Location (map pin),float,deg,Real building,"Map pin only (WGS84), not a model input"
+EventDate,ID,date,,NASA POWER,Historical rainfall event date
+Age,Feature,int,years,Simulated,Age of household head; at least 60 when an elder lives there
+HousingMaterial,Feature,category,,Simulated,Concrete / SemiConcrete / LightMaterials
+HouseMembers,Feature,int,people,Simulated,Household size 1-12
+ChildrenCount,Feature,int,people,Simulated,Members under 18
+ElderCount,Feature,int,people,Simulated,Members aged 60+
+PWDCount,Feature,int,people,Simulated,Persons with disability
+ElevationMeters,Feature,float,m,Copernicus DEM 30 m,"Ground elevation, looked up at the household's map pin (app extraction)"
+SlopeDegrees,Feature,float,deg,Derived from DEM,"Terrain slope, looked up at the household's map pin (app extraction)"
+DistanceToWaterwayM,Feature,float,m,OSM waterways,"Distance to nearest waterway, looked up at the household's map pin (app extraction)"
+LocationType,Feature,category,,Derived,"Riverside <100 m, NearWaterway 100-300 m, Inland >=300 m"
+LandCoverType,Feature,category,,ESA WorldCover 2021,"Land cover, looked up at the household's map pin (app extraction)"
+HistoricalWaterOccurrencePct,Feature,float,%,JRC Global Surface Water 1984-2024,"How often the spot was under water in satellite images, looked up at the household's map pin (app extraction)"
+FloodHazard5yr,Feature,category,,Project NOAH (ODbL),None/Low/Medium/High flood hazard of the barangay in 5-year rain (highest NOAH class covering at least 25% of the barangay area; see barangay_flood_hazard.csv)
+FloodHazard25yr,Feature,category,,Project NOAH (ODbL),None/Low/Medium/High flood hazard of the barangay in 25-year rain (highest NOAH class covering at least 25% of the barangay area; see barangay_flood_hazard.csv)
+FloodHazard100yr,Feature,category,,Project NOAH (ODbL),None/Low/Medium/High flood hazard of the barangay in 100-year rain (highest NOAH class covering at least 25% of the barangay area; see barangay_flood_hazard.csv)
+HouseFloodHazard5yr,Feature,category,,Project NOAH (ODbL),None/Low/Medium/High NOAH flood hazard at the house itself in 5-year rain (point-in-polygon at the map pin)
+HouseFloodHazard25yr,Feature,category,,Project NOAH (ODbL),None/Low/Medium/High NOAH flood hazard at the house itself in 25-year rain (point-in-polygon at the map pin)
+HouseFloodHazard100yr,Feature,category,,Project NOAH (ODbL),None/Low/Medium/High NOAH flood hazard at the house itself in 100-year rain (point-in-polygon at the map pin)
+MGBFloodSusceptibility,Feature,category,,MGB Detailed Flood Susceptibility,NotMapped/Moderate/High/VeryHigh MGB flood susceptibility at the house (point-in-polygon at the map pin)
+Rainfall24hMm,Feature,float,mm,NASA POWER,Rainfall on the event date
+Rainfall3DayMm,Feature,float,mm,NASA POWER,3-day total including the event date
+Rainfall7DayMm,Feature,float,mm,NASA POWER,7-day total including the event date
+RiskLevel,Target,category,,Rule-based (simulated),"Low / Medium / High from RiskScore cut-offs 15 and 40, using the NOAH class at the house (see dataset_card.md)"

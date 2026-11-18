@@ -1,0 +1,21 @@
+# Resident personal data: NEVER upload
+# (names, phone numbers and home locations of registered households)
+flood_risk_system/data/*.db
+flood_risk_system/data/*.db-*
+
+# Rebuilt automatically when the app starts
+flood_risk_system/data/ops_cache/
+__pycache__/
+.pytest_cache/
+*.pyc
+
+# Editor / OS files
+.vscode/
+Thumbs.db
+desktop.ini
+
+# Original downloads (about 260 MB): re-downloadable, and the app uses the processed copies.
+# Delete these three lines if you want them in the repository too.
+Sta_Cruz_Laguna_GIS_Download/raw/
+NOAH_Flood_Hazard_Laguna/downloads/
+Activities/**/*.zip

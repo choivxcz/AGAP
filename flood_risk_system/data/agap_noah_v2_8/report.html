@@ -1,0 +1,13 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Risk model evaluation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>body{font-family:system-ui,sans-serif;max-width:760px;margin:2rem auto;padding:0 1rem;color:#1d2a26;background:#fff}
+table{border-collapse:collapse;width:100%}td,th{border:1px solid #c8d5d0;padding:.4rem .6rem;text-align:right}
+td:first-child,th:first-child{text-align:left}th{background:#eef4f1}.note{color:#5a6b65}img{max-width:100%}</style></head><body>
+<h1>Flood risk model (agap-noah-v2.8)</h1>
+<p>HistGradientBoostingClassifier trained on 232,110 records of the Project AGAP NOAH flood-risk dataset - Santa Cruz, Laguna,
+version 2.8. 22 inputs: household profile, terrain at the pin,
+Project NOAH flood hazard for the barangay and at the house, and NASA POWER rainfall.</p>
+<table><tr><th>Measure</th><th>Hold-out test</th><th>5-fold CV mean</th><th>Comparison: barangay hazard only</th></tr><tr><td>Accuracy</td><td>98.72%</td><td>98.67%</td><td>86.49%</td></tr><tr><td>Balanced accuracy</td><td>97.65%</td><td>97.83%</td><td>84.09%</td></tr><tr><td>Macro F1</td><td>97.55%</td><td>97.56%</td><td>82.03%</td></tr><tr><td>F1 Low</td><td>99.57%</td><td>99.53%</td><td>91.66%</td></tr><tr><td>F1 Medium</td><td>97.35%</td><td>97.28%</td><td>75.78%</td></tr><tr><td>F1 High</td><td>95.73%</td><td>95.89%</td><td>78.66%</td></tr><tr><td>Recall High</td><td>95.84%</td><td>96.70%</td><td>84.27%</td></tr></table>
+<p><img src="/api/assessment/confusion_matrix.png" alt="Confusion matrix of the hold-out test"></p>
+<p class="note">RiskLevel is a rule-based (synthetic) target; scores measure how well the rule is learned, not real-world flood prediction. Households were never split between training and testing.</p>
+</body></html>

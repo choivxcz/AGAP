@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Santa Cruz, Laguna — Household Flood-Risk Location Map</title>
+  <link rel="stylesheet" href="/static/vendor/leaflet.css" />
+  <link rel="stylesheet" href="/static/vendor/maplibre-gl.css" />
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div id="app">
+    <header id="topbar">
+      <h1>Santa Cruz, Laguna — Household Flood-Risk Location Map</h1>
+      <div id="health" class="health">checking GIS coverage…</div>
+    </header>
+
+    <div id="layout">
+      <aside id="sidebar">
+        <section class="panel">
+          <h2>Selected location</h2>
+          <div id="sel-status" class="status info">Click the map (or a building), search for a street or landmark, or type coordinates, then press “Extract GIS features”.</div>
+          <div class="coord-grid">
+            <label>Latitude <input id="lat" type="number" step="0.000001" min="-90" max="90" placeholder="14.2–14.4" /></label>
+            <label>Longitude <input id="lon" type="number" step="0.000001" min="-180" max="180" placeholder="121.3–121.5" /></label>
+            <div class="btn-row">
+              <button id="btn-goto">Show on map</button>
+              <button id="btn-extract" class="primary">Extract GIS features</button>
+            </div>
+          </div>
+          <div id="barangay-line" class="muted"></div>
+          <div id="coverage-line" class="muted"></div>
+        </section>
+
+        <section class="panel" id="building-panel" hidden>
+          <h2>Building / landmark</h2>
+          <div id="bldg-title" class="bldg-title"></div>
+          <table id="bldg-attrs" class="detail"></table>
+          <div class="notes muted" id="bldg-note"></div>
+          <div class="btn-row">
+            <button id="btn-use-building" class="primary">Use building center as location</button>
+            <button id="btn-dismiss-building">Dismiss</button>
+          </div>
+          <div class="notes muted">A building may contain several households and some households have no mapped
+            footprint — the marker stays draggable so the point can be corrected before saving.</div>
+        </section>
+
+        <section class="panel" id="features-panel" hidden>
+          <h2>GIS features</h2>
+          <div id="features-status" class="status"></div>
+          <table id="features-table">
+            <thead><tr><th>Feature</th><th>Value</th><th>Unit</th><th>Status</th></tr></thead>
+            <tbody></tbody>
+          </table>
+          <div id="features-notes" class="notes"></div>
+          <div id="provenance" class="notes muted"></div>
+        </section>
+
+        <section class="panel">
+          <h2>Household</h2>
+          <select id="household-select"><option value="">— select household —</option></select>
+          <div class="btn-row">
+            <button id="btn-new-household">New household…</button>
+            <button id="btn-save-location">Save selected location to household</button>
+          </div>
+          <div id="household-status" class="status"></div>
+          <div id="household-detail" class="detail"></div>
+          <div class="btn-row">
+            <button id="btn-extract-household" class="primary" disabled>Extract & save for household</button>
+            <button id="btn-verify" disabled>Mark location verified</button>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2>Map features</h2>
+          <div class="layer-row"><input type="checkbox" id="lyr-barangay" checked /> Barangay boundaries</div>
+          <div class="layer-row"><input type="checkbox" id="lyr-labels" checked /> Barangay names</div>
+          <div class="layer-row"><input type="checkbox" id="lyr-locals" checked /> Sitio / locality names</div>
+          <div class="layer-row"><input type="checkbox" id="lyr-street-labels" checked /> Street names (label roads)</div>
+          <div class="layer-row"><input type="checkbox" id="lyr-pois" checked /> Landmarks & POIs (from zoom 15)</div>
+          <div class="layer-row"><input type="checkbox" id="lyr-waterways" checked /> Waterways (rivers, streams, canals)</div>
+          <div class="layer-row"><input type="checkbox" id="lyr-roads" checked /> Roads & streets (all mapped classes)</div>
+          <div class="layer-row"><input type="checkbox" id="lyr-buildings" checked /> Building footprints</div>
+          <div class="layer-row">
+            <label for="basemap-select" class="inline-label">Basemap</label>
+            <select id="basemap-select" class="compact">
+              <option value="offline">Local vector (offline)</option>
+              <option value="streets">OSM streets (online)</option>
+              <option value="satellite">Satellite (online)</option>
+            </select>
+          </div>
+          <div id="basemap-note" class="notes muted"></div>
+          <div id="data-note" class="notes muted"></div>
+        </section>
+
+        <section class="panel">
+          <h2>3D view</h2>
+          <div class="layer-row"><input type="checkbox" id="lyr-terrain" checked /> 3D terrain (municipal DEM, 30 m)</div>
+          <div class="layer-row"><input type="checkbox" id="lyr-hillshade" checked /> Hill shading (3D)</div>
+          <div class="layer-row">
+            <label for="exaggeration-select" class="inline-label">Terrain vertical scale</label>
+            <select id="exaggeration-select" class="compact">
+              <option value="1" selected>1× — true scale</option>
+              <option value="1.5">1.5×</option>
+              <option value="2">2×</option>
+            </select>
+          </div>
+          <div class="notes muted">Buildings extrude with real OSM <code>height</code>/<code>building:levels</code>
+            (levels × 3 m) where tagged; otherwise an illustrative estimate — hover a building to see which.
+            Terrain relief is rendered for display only and never changes the raster values used for extraction.</div>
+        </section>
+
+        <section class="panel">
+          <h2>Environmental overlays (from GIS rasters)</h2>
+          <div class="layer-row"><input type="checkbox" id="ovl-elevation" /> Elevation (m)</div>
+          <div id="leg-elevation" class="legend"></div>
+          <div class="layer-row"><input type="checkbox" id="ovl-slope" /> Slope (°)</div>
+          <div id="leg-slope" class="legend"></div>
+          <div class="layer-row"><input type="checkbox" id="ovl-landcover" /> Land cover 2021 (class)</div>
+          <div id="leg-landcover" class="legend"></div>
+          <div class="layer-row"><input type="checkbox" id="ovl-wateroccurrence" /> Water occurrence 1984–2024 (%)</div>
+          <div id="leg-wateroccurrence" class="legend"></div>
+          <div class="layer-row"><input type="checkbox" id="ovl-distwater" /> Distance to waterway (m)</div>
+          <div id="leg-distwater" class="legend"></div>
+          <div class="layer-row">
+            <label for="overlay-opacity" class="inline-label">Overlay opacity</label>
+            <input type="range" id="overlay-opacity" min="0.3" max="1" step="0.05" value="0.9" />
+          </div>
+          <div class="notes muted">Overlays are display-only renders of the municipal GeoTIFFs; feature extraction
+            always reads the original rasters directly and is unaffected. Covered area = the municipality.</div>
+        </section>
+      </aside>
+
+      <main id="mapwrap">
+        <div id="map"></div>
+        <div id="map3d" class="hidden"></div>
+        <div id="searchbar">
+          <input id="search-input" type="text" autocomplete="off"
+                 placeholder="Search street, landmark, sitio, barangay… or “14.27, 121.41”" />
+          <div id="search-results" hidden></div>
+        </div>
+        <div id="mode-switch">
+          <button id="mode-2d" class="active" title="Standard flat map" onclick="setMode('2d')">2D</button>
+          <button id="mode-3d" title="3D terrain & buildings: drag = pan, right-drag or Ctrl+drag = rotate & tilt, scroll = zoom" onclick="setMode('3d')">3D</button>
+          <button id="btn-reset-cam" title="Reset camera: north-up, default pitch/zoom">⌂</button>
+        </div>
+        <div id="hint3d" hidden>Explore: drag = pan &middot; right-drag / Ctrl+drag = rotate & tilt &middot; scroll = zoom &middot; terrain = municipal 30 m DEM (true vertical scale)</div>
+        <div id="hover3d" hidden></div>
+        <div id="coord-chip">—</div>
+        <div id="map-notice" hidden></div>
+      </main>
+    </div>
+  </div>
+
+  <dialog id="dlg-household">
+    <form method="dialog" id="form-household">
+      <h2>New household</h2>
+      <label>Code (optional, e.g. HH-0001) <input name="code" /></label>
+      <label>Label / description <input name="label" /></label>
+      <div class="two-col">
+        <label>Household size <input name="household_size" type="number" min="0" /></label>
+        <label>Children <input name="children_count" type="number" min="0" /></label>
+        <label>Elderly <input name="elderly_count" type="number" min="0" /></label>
+        <label>PWD members <input name="pwd_count" type="number" min="0" /></label>
+      </div>
+      <label>House material <input name="house_material" placeholder="e.g. concrete, wood, mixed" /></label>
+      <label>Notes <input name="notes" /></label>
+      <div class="btn-row">
+        <button value="cancel">Cancel</button>
+        <button value="create" class="primary">Create household</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="/static/vendor/leaflet.js"></script>
+  <script src="/static/vendor/maplibre-gl.js"></script>
+  <script src="/static/app.js?v=stable-3d-controls-4"></script>
+</body>
+</html>

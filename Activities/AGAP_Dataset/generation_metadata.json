@@ -1,0 +1,78 @@
+{
+  "name": "Project AGAP flood vulnerability dataset - Santa Cruz, Laguna",
+  "version": "1.0",
+  "seed": 20261027,
+  "rows": 80400,
+  "households": 8000,
+  "barangays": 26,
+  "rainfall_events": 60,
+  "buildings_in_source": 32544,
+  "eligible_buildings": 22445,
+  "class_counts": {
+    "Low": 56526,
+    "Medium": 19061,
+    "High": 4813
+  },
+  "flood_susceptibility_households": {
+    "Low": 5935,
+    "Moderate": 1321,
+    "High": 744
+  },
+  "susceptibility_source": "Table 3.12 Population Flooding Susceptibility and Exposure (p. 109); see susceptibility_calibration.csv",
+  "simulated_imperfections": {
+    "label_noise_rate": 0.005,
+    "labels_flipped": 394,
+    "missing_age_households": 120,
+    "missing_material_households": 80,
+    "duplicate_rows_added": 400
+  },
+  "risk_rule": {
+    "cutoffs": [
+      20.0,
+      40.0
+    ],
+    "formula": "RiskScore = 100 * Hazard * (0.45 + 0.55 * Vulnerability) / 0.80; see dataset_card.md"
+  },
+  "sources": {
+    "barangays": {
+      "path": "Sta_Cruz_Laguna_GIS_Download\\output\\barangays.geojson",
+      "sha256": "f769c9fb6175436035c72dbf43edac724515dabe668de9e817b7d84a2af3cafd"
+    },
+    "buildings": {
+      "path": "flood_risk_system\\data\\osm\\buildings_overture.geojson",
+      "sha256": "06831d83ec65f5f280ce80f046293b9edbf9515d602450811bfe0d54d292dc4b"
+    },
+    "elevation": {
+      "path": "Sta_Cruz_Laguna_GIS_Download\\output\\elevation_m.tif",
+      "sha256": "e6ce5678d7ddd71bd5acf17d0ea55a9a76aa3e124140048bd4fda047d6f2c424"
+    },
+    "slope": {
+      "path": "Sta_Cruz_Laguna_GIS_Download\\output\\slope_degrees.tif",
+      "sha256": "977f10f4c71abb5e8d8139257b7d156ae256b7e890c6ae960a3ff41c12eba2c4"
+    },
+    "distance": {
+      "path": "Sta_Cruz_Laguna_GIS_Download\\output\\distance_to_osm_waterway_m.tif",
+      "sha256": "6986e2fcd09a0426c601cee7827ab9e8090ccc486d6231b8b8257fc9d55a69ca"
+    },
+    "landcover": {
+      "path": "Sta_Cruz_Laguna_GIS_Download\\output\\land_cover_2021.tif",
+      "sha256": "ad9727c4eae0dddeb496cbde7c39de6a9cbfe2c9cc3030c7037a5794c68eb8d5"
+    },
+    "mgb": {
+      "path": "flood_risk_system\\data\\assessment_sources\\mgb_flood_susceptibility_sta_cruz_laguna.geojson",
+      "sha256": "39a821c559d30e701dcb961ab76a2016abd99f61c13b8b2fcd87072b9ab9cd42"
+    },
+    "rainfall": {
+      "path": "nasa_power_daily_rainfall_features_1991_2025.csv",
+      "sha256": "d624eb750b695b203c79b8c8b75f4d928b4792526bbd5a028a8cfa1f452917ce"
+    },
+    "rain_meta": {
+      "path": "flood_risk_system\\data\\assessment_sources\\nasa_power_daily_rainfall_features_metadata.json",
+      "sha256": "1b26307bd324e5f31a9bd56c91b44bea7a0d2f2e7d990b73a094fa80a9ebf4c8"
+    },
+    "susceptibility_table": {
+      "path": "Activities\\AGAP_Dataset\\sources\\flood_susceptibility_exposure_table_3_12.csv",
+      "sha256": "8004d645717b8a92f9e61011fc09fc16cbe314385c88d39735a09090ded3b2a5"
+    }
+  }
+}

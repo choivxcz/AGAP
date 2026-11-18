@@ -1,0 +1,22 @@
+Column,Role,Type,Unit,Origin,Description
+HouseholdID,ID,text,,Generated,Household identifier (one real building footprint per household)
+Barangay,ID,text,,Real boundary,Santa Cruz barangay containing the building
+Latitude,ID,float,deg,Real building,Building-footprint centroid latitude (WGS84)
+Longitude,ID,float,deg,Real building,Building-footprint centroid longitude (WGS84)
+EventDate,ID,date,,NASA POWER,Historical rainfall event date (UTC)
+Age,Feature,int,years,Simulated,Age of household head; at least 60 when an elder lives in the home
+HousingMaterial,Feature,category,,Simulated,Concrete / SemiConcrete / LightMaterials
+LocationType,Feature,category,,Derived (real),"Riverside <100 m, NearWaterway 100-300 m, Inland >=300 m from OSM waterway"
+LandCoverType,Feature,category,,ESA WorldCover 2021,Land cover at the building (10 m)
+FloodSusceptibility,Feature,category,,Table 3.12 (per-barangay exposure),"High / Moderate / Low; per-barangay shares follow Table 3.12, Low = not listed as exposed"
+HouseMembers,Feature,int,people,Simulated,Household size 1-12 (mean about 4.2)
+ChildrenCount,Feature,int,people,Simulated,Members under 18
+ElderCount,Feature,int,people,Simulated,Members aged 60+
+PWDCount,Feature,int,people,Simulated,Persons with disability (may overlap children/elders)
+ElevationMeters,Feature,float,m,Copernicus DEM 30 m,Ground elevation at the building
+SlopeDegrees,Feature,float,deg,Derived from DEM,Terrain slope at the building
+DistanceToWaterway,Feature,float,m,OSM waterways,Distance from building to nearest mapped waterway
+Rainfall24hMm,Feature,float,mm,NASA POWER,Rainfall on the event date
+Rainfall3DayMm,Feature,float,mm,NASA POWER,3-day total including event date
+Rainfall7DayMm,Feature,float,mm,NASA POWER,7-day total including event date
+RiskLevel,Target,category,,Rule-based (simulated),Low / Medium / High from RiskScore cut-offs 20 and 40

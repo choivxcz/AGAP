@@ -1,0 +1,27 @@
+ESA WorldCover - License
+========================
+
+Source: https://esa-worldcover.org/en/data-access
+Copied from the provider's page on November 5, 2026. The provider's page is the authoritative version.
+
+--- Excerpt (verbatim) ---
+
+License The ESA WorldCover product is provided free of charge, without restriction of use. For the
+full license information see the Creative Commons Attribution 4.0 International License.
+Publications, models and data products that make use of these datasets must include proper
+acknowledgement, including citing the datasets and the journal article as in the following citation.
+Citation A reference publication on the products is in progress. If you are using the data as a
+layer in a published map, please include the following attribution text: © ESA WorldCover project
+[year] / Contains modified Copernicus Sentinel data ([year]) processed by ESA WorldCover consortium
+With year either 2020 or 2021 for the WorldCover 2020 and 2021 map, respectively.
+
+--- How it applies to this dataset ---
+
+Column: LandCoverType (ESA WorldCover 2021 v200, 10 m). Full license text: CC-
+BY-4.0_Creative_Commons_Attribution.txt in this folder.
+Attribution: © ESA WorldCover project 2021 / Contains modified Copernicus Sentinel data (2021)
+processed by ESA WorldCover consortium
+Cite: Zanaga, D., Van De Kerchove, R., Daems, D., De Keersmaecker, W., Brockmann, C., Kirches, G.,
+Wevers, J., Cartus, O., Santoro, M., Fritz, S., Lesiv, M., Herold, M., Tsendbazar, N. E., Xu, P.,
+Ramoino, F., & Arino, O. (2022). ESA WorldCover 10 m 2021 v200. Zenodo.
+https://doi.org/10.5281/zenodo.7254221

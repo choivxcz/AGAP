@@ -1,0 +1,259 @@
+{
+  "version": "agap-noah-v2.8",
+  "dataset": {
+    "name": "Project AGAP NOAH flood-risk dataset - Santa Cruz, Laguna",
+    "version": "2.8",
+    "file": "agap_noah_training.csv",
+    "rows": 232110,
+    "sha256": "28e7c9206e21ac6727bc3d9bbf5aeb8a8cd8a520d562f3a898f0b03157b7c173",
+    "class_counts": {
+      "Low": 156037,
+      "Medium": 56564,
+      "High": 19509
+    }
+  },
+  "trained_on": "2026-11-05",
+  "model_type": "HistGradientBoostingClassifier",
+  "params": {
+    "max_iter": 500,
+    "class_weight": "balanced",
+    "categorical_features": "from_dtype",
+    "random_state": 0
+  },
+  "features": [
+    "Age",
+    "HousingMaterial",
+    "HouseMembers",
+    "ChildrenCount",
+    "ElderCount",
+    "PWDCount",
+    "ElevationMeters",
+    "SlopeDegrees",
+    "DistanceToWaterwayM",
+    "LocationType",
+    "LandCoverType",
+    "HistoricalWaterOccurrencePct",
+    "FloodHazard5yr",
+    "FloodHazard25yr",
+    "FloodHazard100yr",
+    "HouseFloodHazard5yr",
+    "HouseFloodHazard25yr",
+    "HouseFloodHazard100yr",
+    "MGBFloodSusceptibility",
+    "Rainfall24hMm",
+    "Rainfall3DayMm",
+    "Rainfall7DayMm"
+  ],
+  "numeric": [
+    "Age",
+    "HouseMembers",
+    "ChildrenCount",
+    "ElderCount",
+    "PWDCount",
+    "ElevationMeters",
+    "SlopeDegrees",
+    "DistanceToWaterwayM",
+    "HistoricalWaterOccurrencePct",
+    "Rainfall24hMm",
+    "Rainfall3DayMm",
+    "Rainfall7DayMm"
+  ],
+  "categorical": [
+    "HousingMaterial",
+    "LocationType",
+    "LandCoverType",
+    "FloodHazard5yr",
+    "FloodHazard25yr",
+    "FloodHazard100yr",
+    "HouseFloodHazard5yr",
+    "HouseFloodHazard25yr",
+    "HouseFloodHazard100yr",
+    "MGBFloodSusceptibility"
+  ],
+  "categories": {
+    "HousingMaterial": [
+      "Concrete",
+      "LightMaterials",
+      "SemiConcrete"
+    ],
+    "LocationType": [
+      "Inland",
+      "NearWaterway",
+      "Riverside"
+    ],
+    "LandCoverType": [
+      "BareSparseVegetation",
+      "BuiltUp",
+      "Cropland",
+      "Grassland",
+      "TreeCover"
+    ],
+    "FloodHazard5yr": [
+      "High",
+      "Low",
+      "Medium",
+      "None"
+    ],
+    "FloodHazard25yr": [
+      "High",
+      "Low",
+      "Medium"
+    ],
+    "FloodHazard100yr": [
+      "High",
+      "Low",
+      "Medium"
+    ],
+    "HouseFloodHazard5yr": [
+      "High",
+      "Low",
+      "Medium",
+      "None"
+    ],
+    "HouseFloodHazard25yr": [
+      "High",
+      "Low",
+      "Medium",
+      "None"
+    ],
+    "HouseFloodHazard100yr": [
+      "High",
+      "Low",
+      "Medium",
+      "None"
+    ],
+    "MGBFloodSusceptibility": [
+      "High",
+      "Moderate",
+      "NotMapped"
+    ]
+  },
+  "classes": [
+    "High",
+    "Low",
+    "Medium"
+  ],
+  "evaluation": {
+    "holdout_80_20": {
+      "Accuracy": 0.9872,
+      "BalancedAccuracy": 0.9765,
+      "MacroPrecision": 0.9744,
+      "MacroRecall": 0.9765,
+      "MacroF1": 0.9755,
+      "WeightedPrecision": 0.9873,
+      "WeightedRecall": 0.9872,
+      "WeightedF1": 0.9873,
+      "CohenKappa": 0.9731,
+      "MCC": 0.9731,
+      "Precision_Low": 0.997,
+      "Recall_Low": 0.9943,
+      "F1_Low": 0.9957,
+      "Support_Low": 31547.0,
+      "Precision_Medium": 0.9702,
+      "Recall_Medium": 0.9769,
+      "F1_Medium": 0.9735,
+      "Support_Medium": 11165.0,
+      "Precision_High": 0.9561,
+      "Recall_High": 0.9584,
+      "F1_High": 0.9573,
+      "Support_High": 3728.0
+    },
+    "cv_5fold_mean": {
+      "Accuracy": 0.9867,
+      "BalancedAccuracy": 0.9783,
+      "MacroPrecision": 0.9731,
+      "MacroRecall": 0.9783,
+      "MacroF1": 0.9756,
+      "WeightedPrecision": 0.9868,
+      "WeightedRecall": 0.9867,
+      "WeightedF1": 0.9867,
+      "CohenKappa": 0.9724,
+      "MCC": 0.9725,
+      "Precision_Low": 0.9968,
+      "Recall_Low": 0.9938,
+      "F1_Low": 0.9953,
+      "Support_Low": 31207.4,
+      "Precision_Medium": 0.9715,
+      "Recall_Medium": 0.9741,
+      "F1_Medium": 0.9728,
+      "Support_Medium": 11312.8,
+      "Precision_High": 0.9509,
+      "Recall_High": 0.967,
+      "F1_High": 0.9589,
+      "Support_High": 3901.8
+    },
+    "cv_5fold_sd": {
+      "Accuracy": 0.0006,
+      "BalancedAccuracy": 0.0019,
+      "MacroPrecision": 0.0014,
+      "MacroRecall": 0.0019,
+      "MacroF1": 0.0015,
+      "WeightedPrecision": 0.0007,
+      "WeightedRecall": 0.0006,
+      "WeightedF1": 0.0006,
+      "CohenKappa": 0.0012,
+      "MCC": 0.0012,
+      "Precision_Low": 0.0004,
+      "Recall_Low": 0.0005,
+      "F1_Low": 0.0002,
+      "Support_Low": 153.2214,
+      "Precision_Medium": 0.0017,
+      "Recall_Medium": 0.0024,
+      "F1_Medium": 0.0013,
+      "Support_Medium": 96.983,
+      "Precision_High": 0.0045,
+      "Recall_High": 0.0047,
+      "F1_High": 0.0034,
+      "Support_High": 127.7153
+    },
+    "comparison_barangay_hazard_only_cv_mean": {
+      "Accuracy": 0.8649,
+      "BalancedAccuracy": 0.8409,
+      "MacroPrecision": 0.803,
+      "MacroRecall": 0.8409,
+      "MacroF1": 0.8203,
+      "WeightedPrecision": 0.8705,
+      "WeightedRecall": 0.8649,
+      "WeightedF1": 0.867,
+      "CohenKappa": 0.7274,
+      "MCC": 0.7285,
+      "Precision_Low": 0.9362,
+      "Recall_Low": 0.8978,
+      "F1_Low": 0.9166,
+      "Support_Low": 31207.4,
+      "Precision_Medium": 0.735,
+      "Recall_Medium": 0.7821,
+      "F1_Medium": 0.7578,
+      "Support_Medium": 11312.8,
+      "Precision_High": 0.7377,
+      "Recall_High": 0.8427,
+      "F1_High": 0.7866,
+      "Support_High": 3901.8
+    }
+  },
+  "confusion_matrix_holdout": {
+    "labels": [
+      "Low",
+      "Medium",
+      "High"
+    ],
+    "matrix": [
+      [
+        31367,
+        180,
+        0
+      ],
+      [
+        94,
+        10907,
+        164
+      ],
+      [
+        0,
+        155,
+        3573
+      ]
+    ]
+  },
+  "label_note": "RiskLevel is a rule-based (synthetic) target; scores measure how well the rule is learned, not real-world flood prediction."
+}

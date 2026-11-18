@@ -1,0 +1,13 @@
+# Runtime dependencies (Python 3.10+). rasterio/geopandas/pyproj/shapely come
+# from the existing GIS download package requirements; the app adds fastapi,
+# uvicorn and pytest for the web map and tests.
+-r ../Sta_Cruz_Laguna_GIS_Download/requirements.txt
+fastapi>=0.110
+uvicorn>=0.29
+pydantic>=2.6
+requests>=2.31
+pytest>=8.0
+httpx>=0.27
+scikit-learn>=1.8,<1.9
+joblib>=1.5
+matplotlib>=3.10

@@ -1,0 +1,103 @@
+GEODATA Systems - Philippine Barangay Boundary layer terms
+==========================================================
+
+Source: https://services7.arcgis.com/poQdgvLD6DHnbpsT/ArcGIS/rest/services/Philippine_Administrative_Boundaries/FeatureServer/3 (copyrightText and description fields)
+Copied from the provider's page on November 5, 2026. The provider's page is the authoritative version.
+
+--- Excerpt (verbatim) ---
+
+GEODATA Systems Data License Agreement This is a license agreement and not an agreement for sale.
+This license agreement is between __(CLIENT)___________ and GEODATA Systems Technologies, Inc.
+(GEODATA SYSTEMS). This PROPERTY License Agreement (Agreement) gives __(CLIENT)___________ certain
+limited rights to use the proprietary right of GEODATA SYSTEMS to the digital Map Database and
+Related Material of POIs Data (the PROPERTY, for brevity). All rights not specifically granted in
+this Agreement are reserved to GEODATA SYSTEMS. Reservation of Ownership and Grant License: GEODATA
+SYSTEMS retains exclusive ownership of the copy of the PROPERTY licensed under this Agreement and,
+hereby, grants to __(CLIENT)___________ a personal, nonexclusive, nontransferable license to use the
+PROPERTY based on the terms and conditions of this Agreement. __(CLIENT)___________ agrees to use
+reasonable effort to protect the PROPERTY from unauthorized use, reproduction, distribution, or
+publication. Copyright: The PROPERTY is owned by GEODATA SYSTEMS and is protected by Philippine
+copyright laws and applicable international copyright treaties and/or conventions. Proprietary
+Rights: __(CLIENT)___________ acknowledges that the PROPERTY contains proprietary and confidential
+property of GEODATA SYSTEMS. All published hardcopy renditions of the PROPERTY, or any portion of
+the PROPERTY or of derived versions of the PROPERTY shall include a statement acknowledging GEODATA
+Systems Technologies, Inc., as the source of the portion of the PROPERTY that is displayed, printed,
+or plotted. Permitted Uses: • __(CLIENT)___________ may modify the PROPERTY and merge other data
+sets with the PROPERTY for __(CLIENT)___________ ’s own internal use. The portions of the PROPERTY
+that are merged with other data sets will continue to be subject to the terms and conditions of this
+Agreement. • __(CLIENT)___________ may install the PROPERTY or portions of the PROPERTY onto
+permanent storage devices for access by a user or users within the organization, as per the version
+licensed. • __(CLIENT)___________ may make only one copy of the original PROPERTY for archival
+purposes unless the right to make additional copies is granted to __(CLIENT)__________ in writing by
+GEODATA SYSTEMS. • __(CLIENT)___________ may sell, market, or otherwise distribute published hard-
+copy renditions of the PROPERTY or portions of the PROPERTY, provided that __(CLIENT)___________
+acknowledges GEODATA SYSTEMS’s proprietary rights in the PROPERTY. Uses Not Permitted: •
+__(CLIENT)___________ may not sell, rent, lease, sublicense, lend, assign, time-share, or transfer
+in whole or in part, or provide unlicensed Third Parties access to the PROPERTY, any updates, or
+__(CLIENT)___________ ’s rights under this Agreement. • __(CLIENT)___________ may not re-market or
+distribute the PROPERTY or any derived PROPERTY product in digital form to unlicensed Third Parties.
+• __(CLIENT)___________ may not make additional copies of the Documentation. • __(CLIENT)___________
+may not remove or obscure any copyright, proprietary, or trademark notices. Term: The agreement will
+automatically terminate without notice if __(CLIENT)___________ fails to comply with any provision
+of this Agreement. __(CLIENT)___________ will then return to GEODATA SYSTEMS the PROPERTY. The
+parties hereby agree that all provisions which operate to protect the rights of GEODATA SYSTEMS
+shall remain in force should breach occur. Restrictions: The rights granted herein shall exclusively
+pertain to the end-user – __(CLIENT)___________ nothing herein contained shall entitle the purchaser
+– __(CLIENT)___________ - to exercise any or all of the rights in any manner or form granted to
+__(CLIENT)___________ as end-user. Limited Warranty: GEODATA SYSTEMS warrants that media upon which
+the PROPERTY is provided, and documentation will be free from defects in materials and workmanship
+under normal use and service for a period of ninety (90) days from the date of receipt. The PROPERTY
+itself is excluded from the warranty, and __(CLIENT)___________ acknowledges that the PROPERTY may
+contain some non-conformities, defects, or errors. GEODATA SYSTEMS does not warrant that the
+PROPERTY will meet __(CLIENT)___________ ’s needs or expectations, that the use of the PROPERTY will
+be uninterrupted, or that all non-conformities can or will be corrected. GEODATA SYSTEMS is not
+inviting reliance on this data, and the __(CLIENT)___________ should always verify actual data. THE
+PROPERTY IS PROVIDED “AS-IS,” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING,
+BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE,
+WITH RESPECT TO THE PROPERTY. Exclusive Remedy and Limitations of Liability: During the warranty
+period, GEODATA SYSTEMS’s entire liability and __(CLIENT)___________ ’s exclusive remedy shall be
+the return of the license fee paid for the PROPERTY in accordance with GEODATA SYSTEMS Customer
+Service policy that do not meet GEODATA SYSTEMS’s Limited Warranty and which are returned to GEODATA
+SYSTEMS with a copy of __(CLIENT)___________ ’s receipt. GEODATA SYSTEMS shall not be liable for
+indirect, special, incidental, or consequential damages related to __(CLIENT)___________ ’s use of
+the PROPERTY, even if GEODATA SYSTEMS is advised of the possibility of such damage. Waivers: No
+failure or delay by GEODATA SYSTEMS in enforcing any right or remedy under this Agreement shall be
+construed as a waiver of any future or other exercise of such right or remedy by GEODATA SYSTEMS.
+Order for Precedence: Any conflict between the terms of this Agreement and any Purchase Order, or
+other terms shall be resolved in favor of the terms expressed in this Agreement, subject to the
+Government’s minimum rights unless agreed otherwise. Distribution Rights for Derived Digital
+Products At GEODATA SYSTEMS’s option, GEODATA SYSTEMS may grant a separate license agreement, on a
+redistribution fee or royalty fee basis, with users who wish to obtain distributions rights for
+derived or other value-added digital products in ArcGIS compatible formats based on the Map
+PROPERTYs. Please address your written inquiries to the Data Services Manager, GEODATA Systems
+Technologies, Inc., 19th Floor STRATA 100 Bldg., F. Ortigas Jr. Road (Formerly Emerald Ave.),
+Ortigas Center, San Antonio, Pasig City, Philippines. This Agreement is governed by the laws of the
+Philippines. The parties agree that this constitutes the sole and entire agreement of the parties as
+the matter set forth herein and supersedes any previous agreements, understandings, and arrangements
+between the parties relating hereto.
+
+DATA DISCLAIMER: At present, there is no official barangay for the whole Philippines. GEODATA
+derived the Philippine Digital Atlas Dataset from a variety of sources (the 1:500,000 scale Regional
+Natural Resources Atlas published in 1990 with subsequent bi-annual updates for administrative
+boundaries, rivers, roads, and point of interest layers with Census data as of 2015 and 2020.
+GEODATA converted these data into a common spatial data format and geographic referencing system.
+Care was taken in the creation of the various layers, but they are provided "as is". Because GEODATA
+was not the originator of these databases, we are unable to guarantee the accuracy of their
+geographic features or attributes. Geodata Systems Technologies, Inc. cannot accept any
+responsibility for errors, omissions, or positional accuracy in the digital data or underlying
+records. There are no warranties, expressed or implied, including the warranty of merchantability or
+fitness for a particular purpose, accompanying any of these products. However, notification of any
+errors would be appreciated. Please see the metadata records for each database for complete
+information on the different data sources.
+
+--- How it applies to this dataset ---
+
+Used for: the Barangay column, the check that each pin is inside its barangay, and the barangay
+areas used to compute FloodHazard5yr/25yr/100yr.
+This is a proprietary license, not an open one. It allows internal use and printed maps that credit
+GEODATA Systems Technologies, Inc., but it does not allow the data or products derived from it to be
+distributed in digital form to third parties. It also cannot be combined with the ODbL share-alike
+requirement for a public release.
+Recommendation: acceptable for internal thesis work with credit. Replace these boundaries with an
+openly licensed set (for example PSA or NAMRIA boundaries, after confirming their license) before
+the dataset or the system is shared publicly.
